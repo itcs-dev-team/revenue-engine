@@ -1,5 +1,6 @@
 # revenue-engine
-A wordress theme for improving revenue in 2019+ (wordpress/wp-content/themes/revenue-engine)
+
+A site for improving revenue in 2019+. ~~(wordpress/wp-content/themes/revenue-engine)~~
 
 ### Approach
 
@@ -13,8 +14,6 @@ A wordress theme for improving revenue in 2019+ (wordpress/wp-content/themes/rev
 
 ### Setup (2019-09)
 
-(Use `brew`  for Mac instead. )
-
 Install python 3.7
 
 ```bash
@@ -24,8 +23,8 @@ sudo apt install python3.7
 Setup virtual env for Django
 
 ```bash
-sudo python3.7 -m venv django-ram-env
-source django-ram-env/bin/activate
+sudo python3.7 -m venv django-revenue-env
+source django-revenue-env/bin/activate
 ```
 
 Install Django in virtual env
@@ -34,6 +33,14 @@ Install Django in virtual env
 python -m pip install django
 ```
 
+or, update requirements.txt and then install packages from it on other machines
+
+```bash
+python -m pip freeze > requirements.txt
+python -m pip -r requirements.txt
+```
+
+(Remark: Use `brew` instead of `apt` on Mac. )
 
 
 
