@@ -42,7 +42,11 @@ python -m pip -r requirements.txt
 
 (Remark: Use `brew` instead of `apt` on Mac. )
 
+Run test server
 
+```bash
+python manage.py runserver
+```
 
 
 
