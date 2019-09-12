@@ -23,17 +23,17 @@ sudo apt install python3.7
 Setup virtual env for Django
 
 ```bash
-sudo python3.7 -m venv django-revenue-env
+python3.7 -m venv django-revenue-env
 source django-revenue-env/bin/activate
 ```
 
-Install Django in virtual env
+Install Django in virtual env. (django version>=2.1)
 
 ```bash
-python -m pip install django
+python -m pip install django>=2.1
 ```
 
-or, update requirements.txt and then install packages from it on other machines
+or, update requirements.txt and then install packages from it on other machines [#](https://pip.pypa.io/en/stable/user_guide/#installing-packages)
 
 ```bash
 python -m pip freeze > requirements.txt
