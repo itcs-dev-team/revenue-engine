@@ -1,14 +1,27 @@
+{% comment %} 
+Google: django template extends -> https://docs.djangoproject.com/en/1.7/topics/templates/
+One common way of using inheritance is the following three-level approach:
+
+* Create a base.html template that holds the main look-and-feel of your site.
+* Create a base_SECTIONNAME.html template for each “section” of your site. For example, base_news.html, base_sports.html. These templates all extend base.html and include section-specific styles/design.
+* Create individual templates for each type of page, such as a news article or blog entry. These templates extend the appropriate section template.
+
+This approach maximizes code reuse and makes it easy to add items to shared content areas, such as section-wide navigation. 
+{% endcomment %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>{% block title %}Document{% endblock title %}</title>
 </head>
 <body>
     <p><a href="{% url 'mysite:index' %}">Mysite:Home</a></p>
     <p><a href="{% url 'mysite:index' %}">Mysite:Home</a></p>
+    {% block nav %}
+    <p><a href="{% url 'mysite:index' %}">Nav:Home</a></p>
+    {% endblock nav%}
 
     {% block content %}
     <p>This is content from base, to be override by the child.</p>

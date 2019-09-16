@@ -1,4 +1,6 @@
-{% extends "mysite/base.html" %}
+{% extends "mysite/base_news.html" %}
+
+{% block title %}Override Home{% endblock title %}
 
 {% block content %}
     <p>The current time: {{ current_time }}</p>
