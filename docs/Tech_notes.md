@@ -17,9 +17,13 @@ mkdir templates/mysite
 touch templates/mysite/index.html
 ```
 
+Q: How to use template inheritance to extend a template file from base?
+
+Google: django template extends -> https://docs.djangoproject.com/en/1.7/topics/templates/
 
 
-Q: Pits of using parten-children templates: missing namespace (should be defined in `urls.py`)
+
+Q: Pits / Setting of using parent-children templates inheritance: missing namespace (should be defined in `urls.py`)
 
 Google: django 2 'mysite' is not a registered namespace -> https://stackoverflow.com/questions/48161676/django-noreversematch-at-myapp-is-not-a-registered-namespace
 
