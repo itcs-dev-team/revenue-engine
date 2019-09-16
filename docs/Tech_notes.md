@@ -17,9 +17,21 @@ mkdir templates/mysite
 touch templates/mysite/index.html
 ```
 
+
+
 Q: How to use template inheritance to extend a template file from base?
 
 Google: django template extends -> https://docs.djangoproject.com/en/1.7/topics/templates/
+
+```markdown
+One common way of using inheritance is the following three-level approach:
+
+* Create a **base.html** template that holds the main look-and-feel of your site.
+* Create a **base_SECTIONNAME.html** template for each “section” of your site. For example, **base_news.html**, **base_sports.html**. These templates all extend **base.html** and include section-specific styles/design.
+* Create individual templates for each type of page, such as a news article or blog entry. These templates extend the appropriate section template.
+
+This approach maximizes code reuse and makes it easy to add items to shared content areas, such as section-wide navigation.
+```
 
 
 
