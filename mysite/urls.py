@@ -7,4 +7,34 @@ urlpatterns = [
     # Home page
     path('', views.index, name='index'),
     path('services/', views.services, name='service'),
+    path('case-studies/', views.case_studies, name='case_studies'),
 ]
+"""
+URLs:
+/
+services
+    it-consulting-and-project-management
+    managed-services
+    it-recruitment
+    it-support
+    windows-10-migration
+    application-development-and-off-shoring-advisory
+    it-regulatory-advisory-services
+    secure-data-destruction-and-hardware-disposal
+    itcs-group-unified-communication-solutions
+case-studies
+news-and-events
+    news-and-event-details
+career
+    job-details
+    apply-now
+    send-cv
+about-us
+    company-profile
+    management-team
+    investor-relations
+    corprate-social-responsibility
+contact-us
+privacy-policy
+terms-and-conditions
+"""

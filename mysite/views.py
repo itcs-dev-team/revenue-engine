@@ -13,3 +13,7 @@ def index(request):
 def services(request):
     """The service page."""
     return render(request, 'mysite/services.html')
+
+def case_studies(request):
+    """The Case Studies page."""
+    return render(request, 'mysite/case_studies.html')
