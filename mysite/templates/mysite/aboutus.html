@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title> Welcome To ITCS Group - About Us </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- @todo: fill with your company info or remove -->
+  <meta name="description" content="">
+  <meta name="author" content="Themelize.me">
+
+  <!-- Bootstrap v4.3.1 CSS via CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  <!-- Plugins required on all pages NOTE: Additional non-required plugins are loaded ondemand as of AppStrap 2.5 -->
+
+  <!-- Theme style -->
+  <link href="assets/css/theme-style.min.css" rel="stylesheet">
+
+  <!--Your custom colour override-->
+  <link href="#" id="colour-scheme" rel="stylesheet">
+
+  <!-- Your custom override -->
+  <link href="assets/css/custom-style.css" rel="stylesheet">
+
+  <!-- Optional: ICON SETS -->
+  <!-- Iconset: Font Awesome 5.0.13 via CDN -->
+  <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+  <!-- Iconset: flag icons - http://lipis.github.io/flag-icon-css/ -->
+  <link href="assets/plugins/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+  <!-- Iconset: ionicons - http://ionicons.com/ -->
+  <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+  <!-- Iconset: Linearicons - https://linearicons.com/free -->
+  <link href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css" rel="stylesheet">
+  <!-- Iconset: Lineawesome - https://icons8.com/articles/line-awesome -->
+  <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css" rel="stylesheet">
+
+  <!-- Le fav and touch icons - @todo: fill with your icons or remove, try https://realfavicongenerator.net -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
+  <link rel="manifest" href="assets/favicons/manifest.json">
+  <link rel="shortcut icon" href="assets/favicons/favicon.ico">
+  <meta name="msapplication-config" content="assets/favicons/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Google fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Rambla:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Calligraffitti' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto:100,400,700' rel='stylesheet' type='text/css'>
+
+  <!--Plugin: Retina.js (high def image replacement) - @see: http://retinajs.com/-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/retina.js/1.3.0/retina.min.js"></script>
+</head>
+
+<!-- ======== @Region: body ======== -->
+
+<body class="page page-intro navbar-layout-default">
+
+  <!-- @plugin: page loading indicator, delete to remove loader -->
+  <div class="page-loader" data-toggle="page-loader"></div>
+
+  <a id="#top" href="#content" class="sr-only">Skip to content</a>
+
+    <!-- ======== @Region: #header ======== -->
+  <div id="header">
+
+    <!--Header upper region-->
+    <div class="header-upper">
+      <!-- all direct children of the .header-inner element will be vertically aligned with each other you can override all the behaviours using the flexbox utilities (flexbox.htm) All elements with .header-brand & .header-block-flex wrappers will automatically be aligned inline & vertically using flexbox, this can be overridden using the flexbox utilities (flexbox.htm) Use .header-block to stack elements within on small screen & "float" on larger screens use .order-first or/and .order-last classes to make an element show first or last within .header-inner or .headr-block elements -->
+      <div class="header-inner container">
+        <!--user menu-->
+        <div class="header-block-flex order-1 mr-auto">
+        </div>
+        <!--social media icons-->
+        <div class="nav nav-icons header-block order-12">
+          <!--company contact details-->
+          <nav class="nav nav-sm header-block-flex">
+            <i class="fas fa-phone-square"></i><a class="nav-link text-xs text-uppercase d-none d-md-block" href="#" data-toggle="modal"> (+852)3906-5999</a> &nbsp;
+            <i class="fas fa-envelope"></i><a class="nav-link text-xs d-none d-md-block" href="#" data-toggle="modal">info@itcs-group.com</a>
+          </nav>
+          <div class="header-divider header-divider-sm"></div>
+          <!--language menu-->
+            <a href="#en"><i class="flag-icon flag-icon-us"></i></a>&nbsp;
+            <a href="#jp"><i class="flag-icon flag-icon-jp"></i></a>
+        </div>
+      </div>
+    </div>
+    <div data-toggle="sticky">
+
+      <!--Header search region - hidden by default -->
+      <div class="header-search collapse" id="search">
+        <form class="search-form container">
+          <input type="text" name="search" class="form-control search" value="" placeholder="Search">
+          <button type="button" class="btn btn-link"><span class="sr-only">Search </span><i class="fa fa-search fa-flip-horizontal search-icon"></i></button>
+          <button type="button" class="btn btn-link close-btn" data-toggle="search-form-close"><span class="sr-only">Close </span><i class="fa fa-times search-icon"></i></button>
+        </form>
+      </div>
+
+      <!--Header & Branding region-->
+      <div class="header">
+        <!-- all direct children of the .header-inner element will be vertically aligned with each other you can override all the behaviours using the flexbox utilities (flexbox.html) All elements with .header-brand & .header-block-flex wrappers will automatically be aligned inline & vertically using flexbox, this can be overridden using the flexbox utilities (flexbox.htm) Use .header-block to stack elements within on small screen & "float" on larger screens use .order-first or/and .order-last classes to make an element show first or last within .header-inner or .headr-block elements -->
+        <div class="header-inner container">
+          <!--branding/logo -->
+          <div class="header-brand">
+            <a class="header-brand-text" href="index.html" title="Home">
+              <h1 class="h2">
+                <img src="assets/img/logo.gif">
+              </h1>
+            </a>
+            <div class="header-divider d-none d-lg-block"></div>
+            <div class="header-slogan d-none d-lg-block">IT Consulting Solutions Ltd.</div>
+          </div>
+          <!-- other header content -->
+          <div class="header-block order-12">
+
+            <!--Search trigger -->
+            <a href="#search" class="btn btn-icon btn-link header-btn float-right order-11" data-toggle="search-form" data-target=".header-search"><i class="fa fa-search fa-flip-horizontal search-icon"></i></a>
+
+            <!-- mobile collapse menu button - data-toggle="collapse" = default BS menu - data-toggle="off-canvas" = Off-cavnas Menu - data-toggle="overlay" = Overlay Menu -->
+            <a href="#top" class="btn btn-link btn-icon header-btn float-right d-lg-none" data-toggle="off-canvas" data-target=".navbar-main" data-settings='{"cloneTarget":true, "targetClassExtras": "navbar-offcanvas"}'> <i class="fa fa-bars"></i> </a>
+          </div>
+
+          <div class="navbar navbar-expand-md navbar-static-top">
+            <!--everything within this div is collapsed on mobile-->
+            <div class="navbar-main collapse">
+              <!--main navigation-->
+              <ul class="nav navbar-nav navbar-nav-stretch float-lg-right dropdown-effect-fade">
+
+                <!-- Home -->
+                 <li class="nav-item">
+                    <a href="index.html" class="nav-link" data-hover="dropdown"> <i class="fa fa-home nav-link-icon"></i> <span class="d-none">Home</span> </a>
+                </li>
+
+                <!-- Services -->
+                <li class="nav-item dropdown dropdown-mega-menu dropdown-mega-menu-25">
+                  <a href="services.html" class="nav-link dropdown-toggle" id="pages-drop" data-hover="dropdown">Services</a>
+                  <!-- Sub-Menu -->
+                  <div class="dropdown-menu">
+                    <a href="itconsultingandprojectmanagement.html" class="dropdown-item"> IT Consulting and Project Management </a> 
+                    <a href="index.html"class="dropdown-item"> Managed Services (Outsourcing) </a> 
+                    <a href="index.html" class="dropdown-item"> IT Recruitment (Permanent and Contingency Placement) </a> 
+                    <a href="index.html" class="dropdown-item"> IT Support </a>                    
+                    <a href="index.html" class="dropdown-item"> Windows 10 Migration </a> 
+                    <a href="index.html" class="dropdown-item"> Application Development and Off-shoring Advisory </a> 
+                    <a href="index.html" class="dropdown-item"> IT Regulatory Advisory Services </a> 
+                    <a href="index.html" class="dropdown-item"> Secure Data Destruction and Hardware Disposal </a>                    
+                    <a href="index.html" class="dropdown-item"> ITCS Group Unified Communication Solutions </a>
+                  </div>
+                </li>
+
+                <!-- Case Studies -->
+                <li class="nav-item">
+                  <a href="casestudies.html" class="nav-link" data-hover="dropdown"> Case Studies </a>
+                </li>
+
+                <!-- News and Events -->
+                <li class="nav-item">
+                  <a href="newsandevents.html" class="nav-link" data-hover="dropdown"> News and Events </a>
+                </li>
+
+                <!-- Career -->
+                <li class="nav-item">
+                  <a href="career.html" class="nav-link" data-hover="dropdown"> Career </a>
+                </li>
+
+                <!-- About Us -->
+                <li class="nav-item dropdown">
+                  <a href="aboutus.html" class="nav-link dropdown-toggle" id="pages-drop" data-hover="dropdown"> About Us </a>
+                  <!-- Sub-Menu -->
+                  <div class="dropdown-menu">
+                    <a href="companyprofile.html" class="dropdown-item"> Company Profile </a> 
+                    <a href="managementteam.html" class="dropdown-item"> Management Team </a> 
+                    <a href="investorrelations.html" class="dropdown-item"> Investor Relations </a> 
+                    <a href="csr.html" class="dropdown-item"> Corporate Social Responsibility </a>                    
+                  </div>
+                </li>
+
+                <!-- Contact Us -->
+                <li class="nav-item">
+                  <a href="contactus.html" class="nav-link" data-hover="dropdown"> Contact Us</a>
+                </li>
+
+              </ul>
+            </div>
+            <!--/.navbar-collapse -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======== @Region: #highlighted ======== -->
+  <div id="highlighted">
+    <!-- Image Banner: Use the the data-bg-img functionality to create a simple image banner Use spacer classes to make the banner larger with padding, allows for easy responsive changes too see: elements-ctas.htm To make the banner full height add the attributes: data-toggle="full-height" data-offset="#header" -->
+    <div class="bg-black overlay overlay-op-8 text-center" data-toggle="backstretch" data-backstretch-target="self" data-backstretch-overlay=false data-backstretch-imgs="assets/img/About Us banner.jpg">
+      <div data-scroll="scrollax" class="container px-md-3 py-5 pt-md-6 py-md-5 flex-valign" data-animate="fadeIn" data-animate-delay="0.2">
+        <h1 class="display-3 text-white font-weight-bold text-letter-spacing-xs mt-lg-5">
+          About Us
+        </h1>
+        <hr class="hr-white op-4 hr-lg w-40 mx-auto my-4" />
+      </div>
+    </div>
+  </div>
+
+  <!-- ======== @Region: #content ======== -->
+  <div id="content" class="p-0 clearfix">
+    <!-- Contents -->
+    <div id="features" class="container py-4 py-lg-6">
+      <hr class="hr-lg mt-0 mb-3 w-10 mx-auto hr-primary" />
+      <h3 class="font-weight-light mt-2 mb-0 text-muted" align="justify">
+        An IT Managed Services, Outsourcing and Talent-Sourcing Company. We specializing in working with Global Banking Corporations, Multinational Fortune 500 Companies and Growing Organizations.
+      </h3>
+    </div>
+
+    <!--=============== List of Case Studies ===============-->
+    <!-- Service 1 -->
+    <div class="bg-primary">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-lg-6 divider-diagonal divider-diagonal-r divider-primary op-9" data-bg-img="assets/img/aboutus/small/Company Profile.jpg" data-css='{"background-position":"right bottom"}'>
+              </div>
+              <div class="col-lg-6 py-6">
+                <hr class="hr-lg mt-0 mb-2 w-10 ml-0 hr-white" />
+                <h2 class="display-4 text-slab text-grey text-uppercase my-0"> 
+                    <span class="text-white font-weight-bold">Company</span> Profile
+                </h2>
+                <p class="text-white" align="justify">
+                    <br>
+                    ITCS Group is an IT Managed Services, Outsourcing and Talent-Sourcing company. We provide customised IT Consulting Solutions, Project Management, IT Resourcing and On/off-shore Application Development Services across the Asia Pacific region. With offices strategically located in Hong Kong, Tokyo, Singapore, Sydney, and Mumbai. ITCS Group is the preferred technology partner for many leading Global Organisations working across Asia Pacific.
+                    <br><br>
+                    ITCS Group clients include Global Investment Banks, Fortune 500 companies and innovative organisations seeking change, improved efficiencies, reduced risk and developing a competitive advantage.
+                    <br><br>
+                    <a href="companyprofile.html" class="mb-1 btn btn-sm btn-outline-dark btn-rounded" role="button" aria-pressed="true"> Learn more </a> 
+              </p>
+              </div>
+          </div>
+      </div>
+    </div>
+    <!-- Service 2 -->
+    <div class="bg-light">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-6 py-6 flex-valign">
+            <hr class="hr-lg mt-0 mb-2 w-10 ml-0 hr-primary" />
+            <h2 class="display-4 text-slab text-grey-dark text-uppercase my-0">
+                <span class="text-dark font-weight-bold">Management</span> Team
+            </h2>
+            <p class="text-dark" align="justify">
+                <br>
+                ITCS Group is an IT Managed Services, Outsourcing and Talent-Sourcing company. We provide customised IT Consulting Solutions, Project Management, IT Resourcing and On/off-shore Application Development Services across the Asia Pacific region. With offices strategically located in Hong Kong, Tokyo, Singapore, Sydney, and Mumbai. ITCS Group is the preferred technology partner for many leading Global Organisations working across Asia Pacific.
+                <br><br>
+                ITCS Group clients include Global Investment Banks, Fortune 500 companies and innovative organisations seeking change, improved efficiencies, reduced risk and developing a competitive advantage.
+                <br><br>
+                <a href="managementteam.html" class="mb-1 btn btn-sm btn-outline-dark btn-rounded" role="button" aria-pressed="true"> Learn more </a> 
+          </p>
+          </div>
+          <div class="col-lg-6 divider-diagonal divider-diagonal-l divider-light op-9" data-bg-img="assets/img/aboutus/small/Management Team.jpg" data-css='{"background-position":"right bottom"}'>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Service 3 -->
+    <div class="bg-primary">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-lg-6 divider-diagonal divider-diagonal-r divider-primary op-9" data-bg-img="assets/img/aboutus/small/Investor Relations.jpg" data-css='{"background-position":"right bottom"}'>
+              </div>
+              <div class="col-lg-6 py-6">
+                <hr class="hr-lg mt-0 mb-2 w-10 ml-0 hr-white" />
+                <h2 class="display-4 text-slab text-grey text-uppercase my-0"> 
+                    <span class="text-white font-weight-bold">Investor</span> Relations
+                </h2>
+                <p class="text-white" align="justify">
+                    <br>
+                    ITCS Group, headquartered in Hong Kong and with offices in Tokyo, Singapore, Sydney, and Mumbai is a profitable, debt-free and cash-flow-positive business. The company is privately owned and is not traded on any public index.
+                    <br><br>
+                    By developing loyal client relationships that support both project and long-term managed services, and continually increasing services and clients, ITCS is poised to become a leading Management Consulting, Technology Services and IT Outsourcing Company in the Asia Pacific region.
+                    <br><br>
+                    <a href="investorrelations.html" class="mb-1 btn btn-sm btn-outline-dark btn-rounded" role="button" aria-pressed="true"> Learn more </a> 
+              </p>
+              </div>
+          </div>
+      </div>
+    </div>
+    <!-- Service 4 -->
+    <div class="bg-light">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-6 py-6 flex-valign">
+            <hr class="hr-lg mt-0 mb-2 w-10 ml-0 hr-primary" />
+            <h2 class="display-4 text-slab text-grey-dark text-uppercase my-0">
+                <span class="text-dark font-weight-bold">Corporate </span> Social Responsibility
+            </h2>
+            <p class="text-dark" align="justify">
+                <br>
+                ITCS Group believe that international business is about more than just growth and profitability. We appreciate that the way in which we engage with people and our community as a whole is integral to the success of our overall business strategy.
+                <br><br>
+                Our CSR initiatives aim to support and contribute to our core business values of Integrity, Creativity, Respect, Excellence, Responsibility and Passion. Our CSR program operates across all of our Asia Pacific operating entities, where we endeavor to act as global corporate citizens, adhere to ethical codes of conduct, give a fair, safe and unprejudiced workplace for our staff, and to work in a way that is as environmentally and sustainably responsible as possible.
+                <br><br>
+                <a href="csr.html" class="mb-1 btn btn-sm btn-outline-dark btn-rounded" role="button" aria-pressed="true"> Learn more </a> 
+          </p>
+          </div>
+          <div class="col-lg-6 divider-diagonal divider-diagonal-l divider-light op-9" data-bg-img="assets/img/aboutus/small/Corporate Social Responsibility.jpg" data-css='{"background-position":"right bottom"}'>
+          </div>
+        </div>
+      </div>
+    </div> <br><br>
+    <!--=============== End List of Case Studies ===============-->
+
+    <!-- Our Locations -->
+    <div id="team" class="pb-4 bg-white">
+      <div class="bg-dark text-white p-3 p-lg-4 text-center divider-arrow divider-arrow-b divider-dark">
+        <div class="container">
+          <hr class="hr-lg mt-0 mb-2 w-10 mx-auto hr-primary" />
+          <h2 class="text-center text-uppercase font-weight-bold my-0">
+            Our Locations
+          </h2>
+          <h5 class="text-center font-weight-light mt-2 mb-0 text-white op-5">
+            ITCS Group delivers services across the Asia Pacific Region from our core offices in Asia’s key financial hubs.
+          </h5>
+        </div>
+      </div>
+      <!-- Location list-->
+      <div class="container py-4 py-lg-6">
+        <div class="row text-left">
+          <div class="col-lg-4 d-lg-flex mb-3 mb-lg-0">
+            <div class="shadow-lg p-3 mb-5 bg-white rounded px-3 pb-3 pt-7 overlay overlay-gradient overlay-op-8 rounded flex-ew flex-valign-b" data-animate="slideInLeft" data-animate-delay="0.5" data-bg-img="assets/img/locations/small/HongKong.jpg" data-hover="rubberBand">
+              <p class="text-white text-uppercase mb-0"> Hong Kong </p>
+              <hr class="hr-lg my-2 w-20 ml-0 hr-primary" />
+            </div>
+          </div>
+          <div class="col-lg-4 d-lg-flex mb-3 mb-lg-0">
+            <div class="shadow-lg p-3 mb-5 bg-white rounded px-3 pb-3 pt-7 overlay overlay-gradient overlay-op-8 rounded flex-ew flex-valign-b" data-animate="zoomIn" data-animate-delay="0.5" data-bg-img="assets/img/locations/small/Singapore.jpg" data-hover="rubberBand">
+              <p class="text-white text-uppercase mb-0"> Singapore </p>
+              <hr class="hr-lg my-2 w-20 ml-0 hr-primary" />
+            </div>
+          </div>
+          <div class="col-lg-4 d-lg-flex">
+            <div class="shadow-lg p-3 mb-5 bg-white rounded px-3 pb-3 pt-7 overlay overlay-gradient overlay-op-8 rounded flex-ew flex-valign-b" data-animate="slideInRight" data-animate-delay="0.5" data-bg-img="assets/img/locations/small/Tokyo.jpg" data-hover="rubberBand">
+              <p class="text-white text-uppercase mb-0"> Japan </p>
+              <hr class="hr-lg my-2 w-20 ml-0 hr-primary" />
+            </div>
+          </div>
+          <div class="col-lg-4 d-lg-flex mb-3 mb-lg-0">
+            <div class="shadow-lg p-3 mb-5 bg-white rounded px-3 pb-3 pt-7 overlay overlay-gradient overlay-op-8 rounded flex-ew flex-valign-b" data-animate="slideInLeft" data-animate-delay="0.5" data-bg-img="assets/img/locations/small/Australia.jpg" data-hover="rubberBand"> 
+              <p class="text-white text-uppercase mb-0"> Australia </p>
+              <hr class="hr-lg my-2 w-20 ml-0 hr-primary" />
+            </div>
+          </div>
+          <div class="col-lg-4 d-lg-flex mb-3 mb-lg-0">
+            <div class="shadow-lg p-3 mb-5 bg-white rounded px-3 pb-3 pt-7 overlay overlay-gradient overlay-op-8 rounded flex-ew flex-valign-b" data-animate="zoomIn" data-animate-delay="0.5" data-bg-img="assets/img/locations/small/India.jpg" data-hover="rubberBand">
+              <p class="text-white text-uppercase mb-0"> India </p>
+              <hr class="hr-lg my-2 w-20 ml-0 hr-primary" />
+            </div>
+          </div>
+          <div class="col-lg-4 d-lg-flex">
+            <div class="shadow-lg p-3 mb-5 bg-white rounded px-3 pb-3 pt-7 overlay overlay-gradient overlay-op-8 rounded flex-ew flex-valign-b" data-animate="slideInRight" data-animate-delay="0.5" data-bg-img="assets/img/locations/small/China.jpg" data-hover="rubberBand">
+              <p class="text-white text-uppercase mb-0"> China </p>
+              <hr class="hr-lg my-2 w-20 ml-0 hr-primary" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Location list-->
+    </div>
+    <!-- End Our Locations -->
+
+    <!-- Contact Us -->
+    <div id="team" class="pb-4 bg-white">
+      <div class="bg-dark text-white p-3 p-lg-4 text-center divider-arrow divider-arrow-b divider-dark">
+        <div class="container">
+          <hr class="hr-lg mt-0 mb-2 w-10 mx-auto hr-primary" />
+          <h2 class="text-center text-uppercase font-weight-bold my-0">
+            Contact Us
+          </h2>
+          <h5 class="text-center font-weight-light mt-2 mb-0 text-white op-5">
+            Connect with Top Solutions Consultants in the IT Industry!
+          </h5>
+        </div>
+      </div>
+      <!-- Contact form -->
+      <div id="contact">
+        <div class="container p-4 py-lg-5">
+          <div class="row" data-animate="fadeIn" data-animate-delay="0.1">
+            <div class="col-md-12 mb-5" id="sendmessage">
+              <div class="google-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7383.985736081398!2d114.172165!3d22.27826!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb9d583129679203a!2sIT%20Consulting%20Solutions%20Ltd.!5e0!3m2!1sen!2sus!4v1568220365329!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0"></iframe>
+              </div>
+              </div>
+              <div class="col-md-6">
+                <form id="contact-form" action="#" role="form">
+                  <div class="form-group" data-animate="fadeInDown" data-animate-delay="0.2">
+                    <label class="sr-only" for="contact-name">Name</label>
+                    <input type="text" class="form-control form-control-rounded" id="contact-name" placeholder="Name">
+                  </div>
+                  <div class="form-group" data-animate="fadeInDown" data-animate-delay="0.3">
+                    <label class="sr-only" for="contact-email">Email</label>
+                    <input type="email" class="form-control form-control-rounded" id="contact-email" placeholder="Email">
+                  </div>
+                  <div class="form-group" data-animate="fadeInDown" data-animate-delay="0.4">
+                    <label class="sr-only" for="contact-message">Message</label>
+                    <textarea rows="5" class="form-control form-control-rounded" id="contact-message" placeholder="Message"></textarea>
+                  </div>
+                  <center> <input type="button" class="btn btn-outline-primary btn-lg btn-rounded" value="Send Message"> </center>
+                </form>
+              </div>
+              <div class="col-md-5 offset-md-1 mt-4 mt-md-0" data-animate="fadeIn" data-animate-delay="0.4">
+                <h4 class="mb-1 font-weight-bold">
+                  IT Consulting Solutions Ltd.
+                </h4>
+                <p class="mb-1">
+                  <abbr title="Address"><i class="fa fa-home pr-2"></i></abbr> Beverly House 93-107, Lockhart Road, Wan Chai, HK
+                </p>
+                <p class="mb-1">
+                  <abbr title="Email"><i class="fa fa-envelope pr-2"></i></abbr> info@itcs-group.com
+                </p>
+                <p class="mb-0">
+                  <abbr title="Phone"><i class="fa fa-phone pr-2"></i></abbr> (+852)3906-5999 
+                </p>
+                <br>
+                  <img src="assets/img/recaptcha.png" class="img-responsive" width="330" height="80">
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- End Contact Us -->
+
+      <!-- Project Calculation - this appears the the bottom of the page once you scroll down -->
+      <div class="w-100 py-3 pos-fixed pos-zindex-20 pos-b scroll-state-hidden bg-white bg-shadow" data-scroll="scroll-state" data-scroll-amount="120" data-scroll-setting='{"effectIn":"slideInUp", "effectOut":"slideOutDown", "effectDuration":"0.3", "breakpoint":"992"}'>
+        <div class="container d-flex flex-column flex-lg-row text-center justify-content-center align-items-center">
+          <p class="d-lg-inline-block mr-lg-3 text-dark my-0"><strong>Project calculation</strong> is just a click away</p>
+          <p class="d-lg-inline-block text-sm text-dark op-8 my-0"><a href="https://issa.itcs-group.com/#it-projects" class="mt-2 mt-lg-0 btn btn-primary border-w-2 btn-rounded px-4 py-2 font-weight-bold text-uppercase" target="_blank">Calculate now</a></p>
+        </div>
+        <a href="#sendmessage" class="btn btn-icon btn-primary pos-fixed pos-b pos-r mr-6 mb-3 scroll-state-hidden" title="Send a message" data-scroll="scroll-state"><i class="fas fa-headphones"></i></a>
+        <a href="#top" class="btn btn-icon btn-dark pos-fixed pos-b pos-r mr-3 mb-3" title="Back to top" data-scroll="scroll-state"><i class="fa fa-chevron-up"></i></a>
+      </div>
+
+  </div>
+  <!-- #Content -->
+
+  <!-- ======== Footer ======== -->
+  <footer id="footer" class="p-0">
+    <div class="container pt-6 pb-5">
+      <div class="row">
+        <div class="col-md-3">
+          <h4 class="text-uppercase text-white">
+            About Us
+          </h4>
+          <p>An IT Managed Services, Outsourcing and Talent-Sourcing Company. We specializing in working with Global Banking Corporations, Multinational Fortune 500 Companies and Growing Organizations.</p>
+        </div>
+
+        <div class="col-md-6">
+          <h4 class="text-uppercase text-white">
+            Our Services
+          </h4>
+          <ul>
+            <li> IT Consulting and Project Management </li> 
+            <li> Managed Services (Outsourcing) </li> 
+            <li> IT Recruitment (Permanent and Contingency Placement) </li> 
+            <li> IT Support </li>                    
+            <li> Windows 10 Migration </li> 
+            <li> Application Development and Off-shoring Advisory </li> 
+            <li> IT Regulatory Advisory Services </li> 
+            <li> Secure Data Destruction and Hardware Disposal </li>                  
+            <li> ITCS Group Unified Communication Solutions </li> 
+          </ul>
+        </div>
+
+        <div class="col-md-3">
+          <h4 class="text-uppercase text-white">
+            Quick Links
+          </h4>
+          <ul>
+            <li> Services </li> 
+            <li> Case Studies </li> 
+            <li> News and Events </li> 
+            <li> Career </li> 
+            <li> About Us </li>                    
+            <li> Contact Us </li> 
+          </ul>
+          <img src="assets/img/ssl.png" class="img-responsive" width="100" height="25">
+          <img src="assets/img/mcafee.png" class="img-responsive" width="80" height="25">
+        </div>
+      </div>
+
+    </div>
+    <hr class="my-0 hr-blank op-2" />
+    <!--@todo: replace with company copyright details-->
+    <div class="bg-inverse-dark text-sm py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <p class="mb-0">Copyright 2019 &copy; ITCS Group</p>
+          </div>
+          <div class="col-md-6">
+            <ul class="list-inline footer-links float-md-right mb-0">
+              <li class="list-inline-item"><a href="termsandconditions.html">Terms and Conditions</a></li>
+              <li class="list-inline-item"><a href="privacypolicy.html">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </br></br></br>
+  </footer>
+  <!-- ======== end Footer ======== -->
+
+  <!--Hidden elements - excluded from jPanel Menu on mobile-->
+  <div class="hidden-elements js-off-canvas-exclude"></div>
+
+
+  <!--jQuery 3.3.1 via CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Popper 1.14.6 via CDN, needed for Bootstrap Tooltips & Popovers -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+
+  <!-- Bootstrap v4.3.1 JS via CDN -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+  <!-- JS plugins required on all pages NOTE: Additional non-required plugins are loaded ondemand as of AppStrap 2.5 To disable this and load plugin assets manually simple add data-plugins-manual=true to the body tag -->
+
+  <!--Custom scripts & AppStrap API integration -->
+  <script src="assets/js/custom-script.js"></script>
+  <!--AppStrap scripts mainly used to trigger libraries/plugins -->
+  <script src="assets/js/script.min.js"></script>
+</body>
+
+</html>
