@@ -29,3 +29,7 @@ def career(request):
 def about_us(request):
     """The About Us page."""
     return render(request, 'mysite/about_us.html')
+
+def contact_us(request):
+    """The Contact Us page."""
+    return render(request, 'mysite/contact.html')
