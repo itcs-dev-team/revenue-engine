@@ -37,3 +37,7 @@ def contact_us(request):
 def privacy(request):
     """The privacy page."""
     return render(request, 'mysite/privacy.html')
+
+def terms_and_conditions(request):
+    """The Terms and Conditions page."""
+    return render(request, 'mysite/terms_and_conditions.html')
