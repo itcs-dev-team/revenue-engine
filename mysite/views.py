@@ -33,3 +33,7 @@ def about_us(request):
 def contact_us(request):
     """The Contact Us page."""
     return render(request, 'mysite/contact.html')
+
+def privacy(request):
+    """The privacy page."""
+    return render(request, 'mysite/privacy.html')
