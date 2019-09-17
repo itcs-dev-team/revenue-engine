@@ -8,12 +8,15 @@ One common way of using inheritance is the following three-level approach:
 
 This approach maximizes code reuse and makes it easy to add items to shared content areas, such as section-wide navigation. 
 {% endcomment %}
+{% load bootstrap4 %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
     <title>{% block title %}Document{% endblock title %}</title>
 </head>
 <body>
