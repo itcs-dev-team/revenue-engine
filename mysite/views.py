@@ -17,3 +17,7 @@ def services(request):
 def case_studies(request):
     """The Case Studies page."""
     return render(request, 'mysite/case_studies.html')
+
+def news_and_events(request):
+    """The News and Events page."""
+    return render(request, 'mysite/news_and_events.html')
