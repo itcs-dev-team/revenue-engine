@@ -17,6 +17,8 @@ This approach maximizes code reuse and makes it easy to add items to shared cont
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {% bootstrap_css %}
     {% bootstrap_javascript %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'mysite/base.css' %}" type="text/css">
     <title>{% block title %}Document{% endblock title %}</title>
 </head>
 <body>

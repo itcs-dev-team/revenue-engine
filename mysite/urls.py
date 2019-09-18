@@ -5,6 +5,7 @@ app_name = "mysite"
 
 urlpatterns = [
     # TODO: services, news, career will be moved to a django app.
+    path('home/', views.home, name='home'), # TODO: remove this path when production
     # level 1 pages
     path('', views.index, name='index'),
     path('services/', views.services, name='service'),

@@ -10,6 +10,10 @@ def index(request):
     # return render(request, 'mysite/index.html', current_time)
     return render(request, 'mysite/index.html')
 
+def home(request):
+    """A simple home page, with django-bootstrap4, for debug of static files."""
+    return render(request, 'mysite/home.html')
+
 # level 1 pages
 def services(request):
     """The service page."""
