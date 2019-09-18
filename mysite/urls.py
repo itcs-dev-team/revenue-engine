@@ -10,8 +10,8 @@ urlpatterns = [
     path('case-studies/', views.case_studies, name='case_studies'),
     path('news-and-events/', views.news_and_events, name='news_and_events'),
     path('career/', views.career, name='career'),
-    path('about-us/', views.about_us, name='about_us'),
-    path('contact-us/', views.contact_us, name='contact_us'),
+    path('about/', views.about, name='about'),
+    path('contact/', views.contact, name='contact'),
     path('privacy/', views.privacy, name='privacy'),
     path('terms-and-conditions/', views.terms_and_conditions, name='terms_and_conditions'),
 ]

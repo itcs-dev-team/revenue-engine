@@ -26,11 +26,11 @@ def career(request):
     """The Career page."""
     return render(request, 'mysite/career.html')
 
-def about_us(request):
+def about(request):
     """The About Us page."""
-    return render(request, 'mysite/about_us.html')
+    return render(request, 'mysite/about.html')
 
-def contact_us(request):
+def contact(request):
     """The Contact Us page."""
     return render(request, 'mysite/contact.html')
 
