@@ -1,3 +1,15 @@
+{% comment %} 
+Google: django template extends -> https://docs.djangoproject.com/en/1.7/topics/templates/
+One common way of using inheritance is the following three-level approach:
+
+* Create a base.html template that holds the main look-and-feel of your site.
+* Create a base_SECTIONNAME.html template for each “section” of your site. For example, base_news.html, base_sports.html. These templates all extend base.html and include section-specific styles/design.
+* Create individual templates for each type of page, such as a news article or blog entry. These templates extend the appropriate section template.
+
+This approach maximizes code reuse and makes it easy to add items to shared content areas, such as section-wide navigation. 
+{% endcomment %}
+{% load bootstrap4 %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,19 +29,19 @@
   <!-- Plugins required on all pages NOTE: Additional non-required plugins are loaded ondemand as of AppStrap 2.5 -->
 
   <!-- Theme style -->
-  <link href="assets/css/theme-style.min.css" rel="stylesheet">
+  <link href="{% static 'mysite/css/theme-style.min.css' %}" rel="stylesheet">
 
   <!--Your custom colour override-->
   <link href="#" id="colour-scheme" rel="stylesheet">
 
   <!-- Your custom override -->
-  <link href="assets/css/custom-style.css" rel="stylesheet">
+  <link href="{% static 'mysite/css/custom-style.css' %}" rel="stylesheet">
 
   <!-- Optional: ICON SETS -->
   <!-- Iconset: Font Awesome 5.0.13 via CDN -->
   <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
   <!-- Iconset: flag icons - http://lipis.github.io/flag-icon-css/ -->
-  <link href="assets/plugins/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
+  <link href="{% static 'mysite/plugins/flag-icon-css/css/flag-icon.min.css' %}" rel="stylesheet">
   <!-- Iconset: ionicons - http://ionicons.com/ -->
   <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
   <!-- Iconset: Linearicons - https://linearicons.com/free -->
@@ -38,12 +50,12 @@
   <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css" rel="stylesheet">
 
   <!-- Le fav and touch icons - @todo: fill with your icons or remove, try https://realfavicongenerator.net -->
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
-  <link rel="manifest" href="assets/favicons/manifest.json">
-  <link rel="shortcut icon" href="assets/favicons/favicon.ico">
-  <meta name="msapplication-config" content="assets/favicons/browserconfig.xml">
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'mysite/favicons/apple-touch-icon.png' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'mysite/favicons/favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'mysite/favicons/favicon-16x16.png' %}">
+  <link rel="manifest" href="{% static 'mysite/favicons/manifest.json' %}>
+  <link rel="shortcut icon" href="{% static 'mysite/favicons/favicon.ico' %}">
+  <meta name="msapplication-config" content="{% static 'mysite/favicons/browserconfig.xml' %}">
   <meta name="theme-color" content="#ffffff">
 
   <!-- Google fonts -->
@@ -109,7 +121,7 @@
           <div class="header-brand">
             <a class="header-brand-text" href="index.html" title="Home">
               <h1 class="h2">
-                <img src="assets/img/logo.gif">
+                <img src="{% static 'mysite/img/logo.gif' %}">
               </h1>
             </a>
             <div class="header-divider d-none d-lg-block"></div>
@@ -221,7 +233,7 @@
   <!-- ======== @Region: #highlighted ======== -->
   <div id="highlighted">
     <!-- Image Banner: Use the the data-bg-img functionality to create a simple image banner Use spacer classes to make the banner larger with padding, allows for easy responsive changes too see: elements-ctas.htm To make the banner full height add the attributes: data-toggle="full-height" data-offset="#header" -->
-    <div class="bg-black overlay overlay-op-8 text-center" data-toggle="backstretch" data-backstretch-target="self" data-backstretch-overlay=false data-backstretch-imgs="assets/img/locations/HongKong.jpg,assets/img/locations/Singapore.jpg,assets/img/locations/Tokyo.jpg,assets/img/locations/Australia.jpg,assets/img/locations/India.jpg,assets/img/locations/China.jpg">
+    <div class="bg-black overlay overlay-op-8 text-center" data-toggle="backstretch" data-backstretch-target="self" data-backstretch-overlay=false data-backstretch-imgs="{% static 'mysite/img/locations/HongKong.jpg' %},{% static 'mysite/img/locations/Singapore.jpg' %},{% static 'mysite/img/locations/Tokyo.jpg' %},{% static 'mysite/img/locations/Australia.jpg' %},{% static 'mysite/img/locations/India.jpg' %},{% static 'mysite/img/locations/China.jpg' %}">
       <div data-scroll="scrollax" data-toggle="full-height" class="container px-md-3 py-5 pt-md-6 py-md-5 flex-valign" data-animate="fadeIn" data-animate-delay="0.4">
         <h2 class="text-grey font-weight-normal mt-lg-3" align="left">
           Delivered with
@@ -356,7 +368,7 @@
     <div class="bg-dark">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-lg-7 divider-diagonal divider-diagonal-r divider-dark" data-bg-img="assets/img/newsandevents/recruitaism.jpg" data-css='{"background-attachment": "fixed"}'>
+          <div class="col-lg-7 divider-diagonal divider-diagonal-r divider-dark" data-bg-img="{% static 'mysite/img/newsandevents/recruitaism.jpg' %}" data-css='{"background-attachment": "fixed"}'>
           </div>
           <div class="col-lg-4 py-5">
             <hr class="hr-lg mt-0 mb-2 w-10 ml-0 hr-primary" />
@@ -379,7 +391,7 @@
     <div class="container py-4 py-lg-6">
       <div class="row text-left">
         <div class="col-lg-4 d-lg-flex mb-3 mb-lg-0">
-          <div class="shadow-lg p-3 mb-5 bg-white rounded px-3 pb-3 pt-7 overlay overlay-gradient overlay-op-8 rounded flex-ew flex-valign-b" data-animate="slideInLeft" data-animate-delay="0.5" data-bg-img="assets/img/newsandevents/news1sm.jpg" data-hover="rubberBand"> 
+          <div class="shadow-lg p-3 mb-5 bg-white rounded px-3 pb-3 pt-7 overlay overlay-gradient overlay-op-8 rounded flex-ew flex-valign-b" data-animate="slideInLeft" data-animate-delay="0.5" data-bg-img="{% static 'mysite/img/newsandevents/news1sm.jpg' %}" data-hover="rubberBand"> 
             <h2 class="text-white mb-0 display-8 font-weight-bold">
               <a href="newsandeventsdetails.html" class="text-white"> Annual Events </a>
             </h2>
@@ -388,7 +400,7 @@
           </div>
         </div>
         <div class="col-lg-4 d-lg-flex mb-3 mb-lg-0">
-          <div class="shadow-lg p-3 mb-5 bg-white rounded px-3 pb-3 pt-7 overlay overlay-gradient overlay-op-8 rounded flex-ew flex-valign-b" data-animate="zoomIn" data-animate-delay="0.5" data-bg-img="assets/img/newsandevents/news2sm.jpg" data-hover="rubberBand">
+          <div class="shadow-lg p-3 mb-5 bg-white rounded px-3 pb-3 pt-7 overlay overlay-gradient overlay-op-8 rounded flex-ew flex-valign-b" data-animate="zoomIn" data-animate-delay="0.5" data-bg-img="{% static 'mysite/img/newsandevents/news2sm.jpg' %}" data-hover="rubberBand">
             <h2 class="text-white mb-0 display-8 font-weight-bold">
               <a href="newsandeventsdetails.html" class="text-white"> RegTech - Justify your spend or your failure? </a>
             </h2>
@@ -397,7 +409,7 @@
           </div>
         </div>
         <div class="col-lg-4 d-lg-flex">
-          <div class="shadow-lg p-3 mb-5 bg-white rounded px-3 pb-3 pt-7 overlay overlay-gradient overlay-op-8 rounded flex-ew flex-valign-b" data-animate="slideInRight" data-animate-delay="0.5" data-bg-img="assets/img/newsandevents/news3sm.jpg" data-hover="rubberBand">
+          <div class="shadow-lg p-3 mb-5 bg-white rounded px-3 pb-3 pt-7 overlay overlay-gradient overlay-op-8 rounded flex-ew flex-valign-b" data-animate="slideInRight" data-animate-delay="0.5" data-bg-img="{% static 'mysite/img/newsandevents/news3sm.jpg' %}" data-hover="rubberBand">
             <h2 class="text-white mb-0 display-8 font-weight-bold">
               <a href="newsandeventsdetails.html" class="text-white"> Annual AIMA APAC Forum 2019 </a>
             </h2>
@@ -462,7 +474,7 @@
                 <abbr title="Phone"><i class="fa fa-phone pr-2"></i></abbr> (+852)3906-5999 
               </p>
               <br>
-                <img src="assets/img/recaptcha.png" class="img-responsive" width="330" height="80">
+                <img src="{% static 'mysite/img/recaptcha.png' %}" class="img-responsive" width="330" height="80">
             </div>
           </div>
         </div>
@@ -522,8 +534,8 @@
             <li> About Us </li>                    
             <li> Contact Us </li> 
           </ul>
-          <img src="assets/img/ssl.png" class="img-responsive" width="100" height="25">
-          <img src="assets/img/mcafee.png" class="img-responsive" width="80" height="25">
+          <img src="{% static 'mysite/img/ssl.png' %}" class="img-responsive" width="100" height="25">
+          <img src="{% static 'mysite/img/mcafee.png' %}" class="img-responsive" width="80" height="25">
         </div>
 
       </div>
@@ -646,9 +658,9 @@
   <!-- JS plugins required on all pages NOTE: Additional non-required plugins are loaded ondemand as of AppStrap 2.5 To disable this and load plugin assets manually simple add data-plugins-manual=true to the body tag -->
 
   <!--Custom scripts & AppStrap API integration -->
-  <script src="assets/js/custom-script.js"></script>
+  <script src="{% static 'mysite/js/custom-script.js' %}"></script>
   <!--AppStrap scripts mainly used to trigger libraries/plugins -->
-  <script src="assets/js/script.min.js"></script>
+  <script src="{% static 'mysite/js/script.min.js' %}"></script>
 </body>
 
 </html>
