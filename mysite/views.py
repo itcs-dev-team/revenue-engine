@@ -10,6 +10,7 @@ def index(request):
     # return render(request, 'mysite/index.html', current_time)
     return render(request, 'mysite/index.html')
 
+# level 1 pages
 def services(request):
     """The service page."""
     return render(request, 'mysite/services.html')
@@ -41,3 +42,27 @@ def privacy(request):
 def terms_and_conditions(request):
     """The Terms and Conditions page."""
     return render(request, 'mysite/terms_and_conditions.html')
+
+# level 2 pages
+
+# career section
+def apply_now(request):
+    """The apply_now page."""
+    return render(request, 'mysite/apply_now.html')
+
+# about section
+def company_profile(request):
+    """The company_profile page."""
+    return render(request, 'mysite/company_profile.html')
+
+def management_team(request):
+    """The management_team page."""
+    return render(request, 'mysite/management_team.html')
+
+def investor_relations(request):
+    """The investor_relations page."""
+    return render(request, 'mysite/investor_relations.html')
+
+def corprate_social_responsibility(request):
+    """The corprate_social_responsibility page."""
+    return render(request, 'mysite/corprate_social_responsibility.html')

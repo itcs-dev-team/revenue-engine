@@ -4,7 +4,8 @@ from . import views
 app_name = "mysite"
 
 urlpatterns = [
-    # Home page
+    # TODO: services, news, career will be moved to a django app.
+    # level 1 pages
     path('', views.index, name='index'),
     path('services/', views.services, name='service'),
     path('case-studies/', views.case_studies, name='case_studies'),
@@ -14,6 +15,13 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('privacy/', views.privacy, name='privacy'),
     path('terms-and-conditions/', views.terms_and_conditions, name='terms_and_conditions'),
+    
+    # level 2 pages
+    path('career/apply-now', views.apply_now, name='apply_now'),
+    path('about/company-profile/', views.company_profile, name='company_profile'),
+    path('about/management-team/', views.management_team, name='management_team'),
+    path('about/investor-relations/', views.investor_relations, name='investor_relations'),
+    path('about/corprate-social-responsibility/', views.corprate_social_responsibility, name='corprate_social_responsibility'),
 ]
 """
 URLs:
@@ -35,12 +43,12 @@ career
     job-details
     apply-now
     send-cv
-about-us
+about
     company-profile
     management-team
     investor-relations
     corprate-social-responsibility
-contact-us
+contact
 privacy-policy
 terms-and-conditions
 """
