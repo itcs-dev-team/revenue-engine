@@ -104,6 +104,7 @@ This approach maximizes code reuse and makes it easy to add items to shared cont
 
   <a id="#top" href="#content" class="sr-only">Skip to content</a>
 
+  {% block header %}
     <!-- ======== @Region: #header ======== -->
   <div id="header">
 
@@ -255,6 +256,7 @@ This approach maximizes code reuse and makes it easy to add items to shared cont
       </div>
     </div>
   </div>
+  {% endblock header %}
 
   {% block highlighted %}
   <!-- ======== @Region: #highlighted ======== -->
@@ -366,7 +368,9 @@ This approach maximizes code reuse and makes it easy to add items to shared cont
   {% endblock footer %}
 {% comment %} {% include 'mysite/footer.html' %} {% endcomment %}
 
-{% include 'mysite/job_search_modal.html' %}
+{% block job_search_modal %}
+{% endblock job_search_modal %}
+{% comment %} {% include 'mysite/job_search_modal.html' %} {% endcomment %}
 
   <!--Hidden elements - excluded from jPanel Menu on mobile-->
   <div class="hidden-elements js-off-canvas-exclude"></div>
