@@ -256,6 +256,7 @@ This approach maximizes code reuse and makes it easy to add items to shared cont
     </div>
   </div>
 
+  {% block highlighted %}
   <!-- ======== @Region: #highlighted ======== -->
   <div id="highlighted">
     <!-- Image Banner: Use the the data-bg-img functionality to create a simple image banner Use spacer classes to make the banner larger with padding, allows for easy responsive changes too see: elements-ctas.htm To make the banner full height add the attributes: data-toggle="full-height" data-offset="#header" -->
@@ -286,6 +287,7 @@ This approach maximizes code reuse and makes it easy to add items to shared cont
       </div>
     </div>
   </div>
+  {% endblock highlighted %}
 
 {% block content %}
     <p>The current time: {{ current_time }}</p>
@@ -293,8 +295,77 @@ This approach maximizes code reuse and makes it easy to add items to shared cont
 {% endblock content %}
 
 
+{% block footer %}
+  <!-- ======== Footer ======== -->
+  <footer id="footer" class="p-0">
+    <div class="container pt-6 pb-5">
+      <div class="row">
+        <div class="col-md-3">
+          <h4 class="text-uppercase text-white">
+            About Us
+          </h4>
+          <p>An IT Managed Services, Outsourcing and Talent-Sourcing Company. We specializing in working with Global Banking Corporations, Multinational Fortune 500 Companies and Growing Organizations.</p>
+        </div>
 
-{% include 'mysite/footer.html' %}
+        <div class="col-md-6">
+          <h4 class="text-uppercase text-white">
+            Our Services
+          </h4>
+          <ul>
+            <li> IT Consulting and Project Management </li> 
+            <li> Managed Services (Outsourcing) </li> 
+            <li> IT Recruitment (Permanent and Contingency Placement) </li> 
+            <li> IT Support </li>                    
+            <li> Windows 10 Migration </li> 
+            <li> Application Development and Off-shoring Advisory </li> 
+            <li> IT Regulatory Advisory Services </li> 
+            <li> Secure Data Destruction and Hardware Disposal </li>                  
+            <li> ITCS Group Unified Communication Solutions </li> 
+          </ul>
+        </div>
+
+        <div class="col-md-3">
+          <h4 class="text-uppercase text-white">
+            Quick Links
+          </h4>
+          <ul>
+            <li> Services </li> 
+            <li> Case Studies </li> 
+            <li> News and Events </li> 
+            <li> Career </li> 
+            <li> About Us </li>                    
+            <li> Contact Us </li> 
+          </ul>
+          <img src="{% static 'mysite/img/ssl.png' %}" class="img-responsive" width="100" height="25">
+          <img src="{% static 'mysite/img/mcafee.png' %}" class="img-responsive" width="80" height="25">
+        </div>
+
+      </div>
+
+    </div>
+    <hr class="my-0 hr-blank op-2" />
+    <!--@todo: replace with company copyright details-->
+    <div class="bg-inverse-dark text-sm py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <p class="mb-0">Copyright 2019 &copy; ITCS Group</p>
+          </div>
+          <div class="col-md-6">
+            <ul class="list-inline footer-links float-md-right mb-0">
+              <li class="list-inline-item"><a href="termsandconditions.html">Terms and Conditions</a></li>
+              <li class="list-inline-item"><a href="privacypolicy.html">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </br></br></br>
+  </footer>
+  <!-- ======== end Footer ======== -->
+  {% endblock footer %}
+{% comment %} {% include 'mysite/footer.html' %} {% endcomment %}
+
 {% include 'mysite/job_search_modal.html' %}
 
   <!--Hidden elements - excluded from jPanel Menu on mobile-->
