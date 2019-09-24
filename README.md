@@ -50,8 +50,8 @@ python manage.py runserver
 
 ### Organization
 
-"""
+```
 revenue_engine
 |_ mysite
-"""
+```
 
