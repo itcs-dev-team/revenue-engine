@@ -18,7 +18,7 @@ urlpatterns = [
     path('terms-and-conditions/', views.terms_and_conditions, name='terms_and_conditions'),
     
     # level 2 pages
-    path('career/apply-now', views.apply_now, name='apply_now'),
+    path('career/apply-now/', views.apply_now, name='apply_now'),
     path('about/company-profile/', views.company_profile, name='company_profile'),
     path('about/management-team/', views.management_team, name='management_team'),
     path('about/investor-relations/', views.investor_relations, name='investor_relations'),
