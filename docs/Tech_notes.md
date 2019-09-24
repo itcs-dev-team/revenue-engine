@@ -52,6 +52,39 @@ In "urls.py" (mysite/urls.py)
 app_name = "mysite"
 ```
 
+
+
+Q: I have a 3-tier template inheritance ('base.html -> 'base_mysite.html' -> 'index.html'). What if I define zero-contents template block in the 2nd tier (e.g. "footer" block is zero-contents)?
+
+```django
+{% comment "base structure of template block " %} 
+
+### Base structure of template block in 'base_mysite.html': 
+{% extends "mysite/base.html" %}
+{% load static %}
+
+    1. {% block title %}Welcome To ITCS Group - mysite{% endblock title %}
+    2. {% block header %}{% endblock header %}
+    3. {% block highlighted %}{% endblock highlighted %}
+    4. {% block content %}{% endblock content %}
+    5. {% block footer %}{% endblock footer %}
+    6. {% block job_search_modal %}{% endblock job_search_modal %}
+{% endcomment %}
+
+{% comment "Usage of template block " %} 
+Usage:
+
+- Remove comment of a block to activate a template block in this 'base_mysite.html'.
+    Since a template block should provide contents when inheriting from 'base.html'.
+    Zero-content template block here makes **no contents** showing in the resulting render page.
+    (e.g. When I provide an empty "footer" block here and there was no "footer" block provided in 'index.html',
+    the resulting 'index.html' page shows zero-contents footer.)
+
+{% endcomment %}
+```
+
+
+
 Q: Where is the 'static' folder that I should put css/js/images inside? ('static/' should be put inside the django application, or should be put inside an app?)
 
 Youtube: django static files - > [How to Use Django Static Files (Django Tutorial) | Part 5 - YouTube](https://www.youtube.com/watch?v=3ETQf3TQ9gc&list=PLw02n0FEB3E3VSHjyYMcFadtQORvl1Ssj&index=5)
