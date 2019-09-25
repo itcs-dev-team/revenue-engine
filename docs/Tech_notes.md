@@ -2,7 +2,15 @@
 
 ### Front-end
 
+Q: What is the use of that JavaScript file?
 
+@2019-09-25
+
+* jPanelMenu CSS and JS files inside jPanelMenu folder.
+* flexslider CSS and JS files inside flexslider folder:
+  *  This is being use for the photo and jobs slider in job portal page.
+* fakeLoader CSS and JS files inside fakeLoader folder:
+  * This is page loading effect used on every HTML files. 
 
 ### Back-end
 
@@ -55,6 +63,8 @@ app_name = "mysite"
 
 
 Q: I have a 3-tier template inheritance ('base.html -> 'base_mysite.html' -> 'index.html'). What if I define zero-contents template block in the 2nd tier (e.g. "footer" block is zero-contents)?
+
+@2019-09-25
 
 ```django
 {% comment "base structure of template block " %} 
