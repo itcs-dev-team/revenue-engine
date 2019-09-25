@@ -69,7 +69,7 @@ This approach maximizes code reuse and makes it easy to add items to shared cont
   <link rel="apple-touch-icon" sizes="180x180" href="{% static 'mysite/favicons/apple-touch-icon.png' %}">
   <link rel="icon" type="image/png" sizes="32x32" href="{% static 'mysite/favicons/favicon-32x32.png' %}">
   <link rel="icon" type="image/png" sizes="16x16" href="{% static 'mysite/favicons/favicon-16x16.png' %}">
-  <link rel="manifest" href="{% static 'mysite/favicons/manifest.json' %}>
+  <link rel="manifest" href="{% static 'mysite/favicons/manifest.json' %}">
   <link rel="shortcut icon" href="{% static 'mysite/favicons/favicon.ico' %}">
   <meta name="msapplication-config" content="{% static 'mysite/favicons/browserconfig.xml' %}">
   <meta name="theme-color" content="#ffffff">
@@ -154,6 +154,7 @@ This approach maximizes code reuse and makes it easy to add items to shared cont
             <a href="#top" class="btn btn-link btn-icon header-btn float-right d-lg-none" data-toggle="off-canvas" data-target=".navbar-main" data-settings='{"cloneTarget":true, "targetClassExtras": "navbar-offcanvas"}'> <i class="fa fa-bars"></i> </a>
           </div>
 
+      {% comment %} {% block icons "We don't use nested template blocks, so move the whole block header to 'index.html' " %}
           <div class="navbar">
           <!--Fixed dots menu-->
           <div class="navbar-main pos-fixed pos-zindex-fixed pos-t-10 pos-lg-vcenter pos-r py-2 px-3 bg-white">
@@ -177,6 +178,7 @@ This approach maximizes code reuse and makes it easy to add items to shared cont
           </div>
           <!--/.navbar-collapse -->
         </div>
+        {% endblock icons %} {% endcomment %}
 
           <div class="navbar navbar-expand-md navbar-static-top">
             <!--everything within this div is collapsed on mobile-->
