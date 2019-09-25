@@ -3,6 +3,162 @@
 
 {% block title %}Welcome To ITCS Group - Home{% endblock title %}
 
+  {% block header %}
+    <!-- ======== @Region: #header ======== -->
+  <div id="header">
+
+    <!--Header upper region-->
+    <div class="header-upper">
+      <!-- all direct children of the .header-inner element will be vertically aligned with each other you can override all the behaviours using the flexbox utilities (flexbox.htm) All elements with .header-brand & .header-block-flex wrappers will automatically be aligned inline & vertically using flexbox, this can be overridden using the flexbox utilities (flexbox.htm) Use .header-block to stack elements within on small screen & "float" on larger screens use .order-first or/and .order-last classes to make an element show first or last within .header-inner or .headr-block elements -->
+      <div class="header-inner container">
+        <!--user menu-->
+        <div class="header-block-flex order-1 mr-auto">
+        </div>
+        <!--social media icons-->
+        <div class="nav nav-icons header-block order-12">
+          <!--company contact details-->
+          <nav class="nav nav-sm header-block-flex">
+            <i class="fas fa-phone-square"></i><a class="nav-link text-xs text-uppercase d-none d-md-block" href="#" data-toggle="modal"> (+852)3906-5999</a> &nbsp;
+            <i class="fas fa-envelope"></i><a class="nav-link text-xs d-none d-md-block" href="#" data-toggle="modal">info@itcs-group.com</a>
+          </nav>
+          <div class="header-divider header-divider-sm"></div>
+          <!--language menu-->
+            <a href="index.html"><i class="flag-icon flag-icon-us"></i></a>&nbsp;
+            <a href="index-jp.html"><i class="flag-icon flag-icon-jp"></i></a>
+        </div>
+      </div>
+    </div>
+    <div data-toggle="sticky">
+
+      <!--Header search region - hidden by default -->
+      <div class="header-search collapse" id="search">
+        <form class="search-form container">
+          <input type="text" name="search" class="form-control search" value="" placeholder="Search">
+          <button type="button" class="btn btn-link"><span class="sr-only">Search </span><i class="fa fa-search fa-flip-horizontal search-icon"></i></button>
+          <button type="button" class="btn btn-link close-btn" data-toggle="search-form-close"><span class="sr-only">Close </span><i class="fa fa-times search-icon"></i></button>
+        </form>
+      </div>
+
+      <!--Header & Branding region-->
+      <div class="header">
+        <!-- all direct children of the .header-inner element will be vertically aligned with each other you can override all the behaviours using the flexbox utilities (flexbox.html) All elements with .header-brand & .header-block-flex wrappers will automatically be aligned inline & vertically using flexbox, this can be overridden using the flexbox utilities (flexbox.htm) Use .header-block to stack elements within on small screen & "float" on larger screens use .order-first or/and .order-last classes to make an element show first or last within .header-inner or .headr-block elements -->
+        <div class="header-inner container">
+          <!--branding/logo -->
+          <div class="header-brand">
+            <a class="header-brand-text" href="index.html" title="Home">
+              <h1 class="h2">
+                <img src="{% static 'mysite/img/logo.gif' %}">
+              </h1>
+            </a>
+            <div class="header-divider d-none d-lg-block"></div>
+            <div class="header-slogan d-none d-lg-block">IT Consulting Solutions Ltd.</div>
+          </div>
+          <!-- other header content -->
+          <div class="header-block order-12">
+
+            <!--Search trigger -->
+            <a href="#search" class="btn btn-icon btn-link header-btn float-right order-11" data-toggle="search-form" data-target=".header-search"><i class="fa fa-search fa-flip-horizontal search-icon"></i></a>
+
+            <!-- mobile collapse menu button - data-toggle="collapse" = default BS menu - data-toggle="off-canvas" = Off-cavnas Menu - data-toggle="overlay" = Overlay Menu -->
+            <a href="#top" class="btn btn-link btn-icon header-btn float-right d-lg-none" data-toggle="off-canvas" data-target=".navbar-main" data-settings='{"cloneTarget":true, "targetClassExtras": "navbar-offcanvas"}'> <i class="fa fa-bars"></i> </a>
+          </div>
+
+      {% comment %} {% block icons %} {% endcomment %}
+          <div class="navbar">
+          <!--Fixed dots menu-->
+          <div class="navbar-main pos-fixed pos-zindex-fixed pos-t-10 pos-lg-vcenter pos-r py-2 px-3 bg-white">
+            <center> <a data-toggle="collapse" href="#navbar-collapse"> <i class="ion-android-menu text-dark icon-2x"></i> </a> </center>
+            <div class="collapse show" id="navbar-collapse">
+              <!--main navigation-->
+              <ul class="nav navbar-nav flex-column align-items-center">
+
+                <li class="nav-item">
+                  <a class="mb-1 btn btn-cyan-dark btn-rounded btn-shadow text-white btn-sm" data-toggle="modal" data-target="#JobSearchModal" role="button" aria-pressed="true">Job<br>Search</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://www.facebook.com/ITCS.Group.Ltd" target="_blank" class="btn-icon btn btn-lg"><i class="fab fa-lg fa-facebook-f text-brand-facebook"></i></a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://www.linkedin.com/company/itcs-group" target="_blank" class="btn-icon btn btn-lg"><i class="fab fa-lg fa-linkedin-in text-brand-linkedin"></i></a>
+                </li>
+            
+              </ul>
+            </div>
+          </div>
+          <!--/.navbar-collapse -->
+        </div>
+        {% comment %} {% endblock icons %} {% endcomment %}
+
+          <div class="navbar navbar-expand-md navbar-static-top">
+            <!--everything within this div is collapsed on mobile-->
+            <div class="navbar-main collapse">
+              <!--main navigation-->
+              <ul class="nav navbar-nav navbar-nav-stretch float-lg-right dropdown-effect-fade">
+
+                <!-- Home -->
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link" data-hover="dropdown"> <i class="fa fa-home nav-link-icon"></i> <span class="d-none">Home</span> </a>
+                </li>
+
+                <!-- Services -->
+                <li class="nav-item dropdown dropdown-mega-menu dropdown-mega-menu-25">
+                  <a href="services.html" class="nav-link dropdown-toggle" id="pages-drop" data-hover="dropdown">Services</a>
+                  <!-- Sub-Menu -->
+                  <div class="dropdown-menu">
+                    <a href="itconsultingandprojectmanagement.html" class="dropdown-item"> IT Consulting and Project Management </a> 
+                    <a href="index.html" class="dropdown-item"> Managed Services (Outsourcing) </a> 
+                    <a href="index.html" class="dropdown-item"> IT Recruitment (Permanent and Contingency Placement) </a> 
+                    <a href="index.html" class="dropdown-item"> IT Support </a>                    
+                    <a href="index.html" class="dropdown-item"> Windows 10 Migration </a> 
+                    <a href="index.html" class="dropdown-item"> Application Development and Off-shoring Advisory </a> 
+                    <a href="index.html" class="dropdown-item"> IT Regulatory Advisory Services </a> 
+                    <a href="index.html" class="dropdown-item"> Secure Data Destruction and Hardware Disposal </a>                    
+                    <a href="index.html" class="dropdown-item"> ITCS Group Unified Communication Solutions </a>
+                  </div>
+                </li>
+
+                <!-- Case Studies -->
+                <li class="nav-item">
+                  <a href="casestudies.html" class="nav-link" data-hover="dropdown"> Case Studies </a>
+                </li>
+
+                <!-- News and Events -->
+                <li class="nav-item">
+                  <a href="newsandevents.html" class="nav-link" data-hover="dropdown"> News and Events </a>
+                </li>
+
+                <!-- Career -->
+                <li class="nav-item">
+                  <a href="career.html" class="nav-link" data-hover="dropdown"> Career </a>
+                </li>
+
+                <!-- About Us -->
+                <li class="nav-item dropdown">
+                  <a href="aboutus.html" class="nav-link dropdown-toggle" id="pages-drop" data-hover="dropdown"> About Us </a>
+                  <!-- Sub-Menu -->
+                  <div class="dropdown-menu">
+                    <a href="companyprofile.html" class="dropdown-item"> Company Profile </a> 
+                    <a href="managementteam.html" class="dropdown-item"> Management Team </a> 
+                    <a href="investorrelations.html" class="dropdown-item"> Investor Relations </a> 
+                    <a href="csr.html" class="dropdown-item"> Corporate Social Responsibility </a>                    
+                  </div>
+                </li>
+
+                <!-- Contact Us -->
+                <li class="nav-item">
+                  <a href="contactus.html" class="nav-link" data-hover="dropdown"> Contact Us</a>
+                </li>
+
+              </ul>
+            </div>
+            <!--/.navbar-collapse -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock header %}
+
 {% block content %}
   <!-- ======== @Region: #content ======== -->
   <div id="content" class="p-0 clearfix">
