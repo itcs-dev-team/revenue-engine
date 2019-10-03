@@ -77,8 +77,19 @@ WSGI_APPLICATION = 'revenue_engine.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        
+        # NOT for production: this auth info is same as what defined in docker-compose file.
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'itcs',
+        'USER': 'root',
+        'PASSWORD': 'password',
+        'HOST': '', # '127.0.0.1' or empty string means localhost
+        'PORT': '3306',
+        'TEST': {
+            'NAME': 'itcs-testdb',
+        },
     }
 }
 
