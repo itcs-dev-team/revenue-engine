@@ -1,10 +1,38 @@
 {% extends "mysite/base.html" %}
+{% load static %}
 
-{% block title %}News{% endblock title %}
+{% block title %}Welcome To ITCS Group - Base{% endblock title %}
 
 {% block nav %}
     <p><a href="{% url 'mysite:index' %}">Nav:Home</a></p>
     <p><a href="{% url 'mysite:index' %}">Nav:Home</a></p>
     <p><a href="{% url 'mysite:index' %}">Nav:Home</a></p>
     <p><a href="{% url 'mysite:index' %}">Nav:Home</a></p>
+
+
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                </button>
+                <a class="navbar-brand" href="{% url 'mysite:index' %}">
+                    Learning Log</a>
+            </div>
+
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="{% url 'mysite:index' %}">Topics</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{% url 'mysite:index' %}">register</a></li>
+                    <li><a href="{% url 'mysite:index' %}">log in</a></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+
+        </div>
+    </nav>
 {% endblock nav%}

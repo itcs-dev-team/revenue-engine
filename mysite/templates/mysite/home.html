@@ -1,0 +1,9 @@
+{% extends "mysite/base_news.html" %}
+{% load static %}
+
+{% block title %}Override Home{% endblock title %}
+
+{% block content %}
+    <p>The current time: {{ current_time }}</p>
+    This is content from child, that override the content from base.
+{% endblock content %}
