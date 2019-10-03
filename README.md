@@ -10,6 +10,14 @@ A site for improving revenue in 2019+. ~~(wordpress/wp-content/themes/revenue-en
   
     * ~~[Custom Post Type UI](https://wordpress.org/plugins/custom-post-type-ui/)~~
     
+
+#### About Git branches (2019-10)
+
+1. **'master'**: a stable branch. Everything (that stable) should merge into this branch before online.
+2. **'unstable'**: main branch of unstable code. For forking new branches from it.
+3. **'dev-frontend'** & **dev-frontend-xxx'**: everything about development of front-end.
+4. **'dev-backend'** & **'dev-backend-xxx'**: everything about development of back-end.
+
 ----
 
 ### Setup (2019-09)
