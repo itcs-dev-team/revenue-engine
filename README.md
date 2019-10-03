@@ -13,10 +13,17 @@ A site for improving revenue in 2019+. ~~(wordpress/wp-content/themes/revenue-en
 
 #### About Git branches (2019-10)
 
-1. **'master'**: a stable branch. Everything (that stable) should merge into this branch before online.
-2. **'unstable'**: main branch of unstable code. For forking new branches from it.
+1. **'master'**: a stable branch. 
+   1. Everything (that stable) should be merged into this branch before online.
+2. **'unstable'**: main branch of unstable code. 
+   1. Experiment use. For forking new branches from it.
+   2. Should be merged into '**master**'.
 3. **'dev-frontend'** & **dev-frontend-xxx'**: everything about development of front-end.
+   1. Create new branch '**dev-frontend-xxx**' from it.
+   2. Should be merged into '**unstable**'.
 4. **'dev-backend'** & **'dev-backend-xxx'**: everything about development of back-end.
+   1. Create new branch '**dev-backend-xxx**' from it.
+   2. Should be merged into '**unstable**'.
 
 ----
 
