@@ -1,0 +1,115 @@
+{% extends "mysite/base_mysite.html" %}
+{% load static %}
+
+{% block title %}Welcome To ITCS Group - Submit CV{% endblock title %}
+
+{% block content %}
+  <!-- ======== @Region: #Content ======== -->
+  <div id="content">
+    <div class="container">
+      <!-- Sign Up form -->
+      <form class="form-login form-wrapper form-large" role="form">
+        <h5>
+        Applicant Information
+        </h5>
+        <div class="form-group">
+          <label class="sr-only" for="signup-first-name-page">First Name</label>
+          <input type="text" class="form-control" id="signup-first-name-page" placeholder="First name">
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="signup-last-name-page">Last Name</label>
+          <input type="text" class="form-control" id="signup-last-name-page" placeholder="Last name">
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="signup-email-page">Email address</label>
+          <input type="email" class="form-control" id="signup-email-page" placeholder="Email address">
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="signup-email-page">Phone</label>
+          <input type="phone" class="form-control" id="signup-phone-page" placeholder="Phone">
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="signup-availability-page">Availability</label>
+          <select class="form-control mb-3 mr-sm-2 mb-sm-0" id="signup-availability-page" placeholder="Availability">
+            <option value="0" selected disabled>Availability</option>
+            <option value="1">Immediately</option>
+            <option value="2">2 weeks</option>
+            <option value="3">1 month</option>
+            <option value="4">2 months</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="signup-jobtype-page">Preferred job type</label>
+          <select class="form-control mb-3 mr-sm-2 mb-sm-0" id="signup-jobtype-page" placeholder="Job type">
+            <option value="0" selected disabled>Preferred job type</option>
+            <option value="1">Contract</option>
+            <option value="2">Permanent</option>
+            <option value="3">Temporary</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="signup-jobtype-page">Preferred job category</label>
+          <select class="form-control mb-3 mr-sm-2 mb-sm-0" id="signup-jobtype-page" placeholder="Job category">
+            <option value="0" selected selected disabled>Preferred job category</option>
+            <option value="1">Helpdesk / Desktop Support</option>
+            <option value="2">Network</option>
+            <option value="3">Database</option>
+            <option value="2">Server</option>
+            <option value="3">Security</option>
+            <option value="2">Big data</option>
+            <option value="3">Cloud and Virtualization</option>
+            <option value="3">Others</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="signup-location-page">Current location</label>
+          <select class="form-control mb-3 mr-sm-2 mb-sm-0" id="signup-location-page" placeholder="Location">
+            <option value="0" selected disabled>Current location</option>
+            <option value="1">Hong Kong</option>
+            <option value="2">Singapore</option>
+            <option value="3">Japan</option>
+            <option value="2">Australia</option>
+            <option value="3">India</option>
+            <option value="2">China</option>
+            <option value="3">Others</option>
+          </select>
+        </div>
+        <h5>
+        Attach your CV
+        </h5>
+        <div class="form-group">
+          <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+          <small id="fileHelp" class="form-text text-muted">Please attach your CV in PDF, DOC, or DOCX.</small>
+        </div>
+        <hr />
+        <div class="form-check">
+          <label class="form-check-label">
+              <input type="checkbox" value="term" class="form-check-input">
+              I state that all the information and data above is accurate and truthful.
+          </label> <br>
+          <label class="form-check-label">
+              <input type="checkbox" value="term" class="form-check-input">
+              I authorize ITCS group to contact me for further opportunities.
+          </label> <br>
+          <label class="form-check-label">
+              <input type="checkbox" value="term" class="form-check-input">
+              I agree with the <a href="termsandconditions.html" target="_blank">Terms of Use</a> and <a href="privacypolicy.html" target="_blank">Privacy Policy</a>. 
+          </label>
+        </div>
+        <hr />
+        <center> <button class="btn btn-primary" type="submit">Send</button> </center>
+      </form>
+    </div>
+  </div>
+  <!-- ======== End Content ======== -->
+
+    <!-- Project Calculation - this appears the the bottom of the page once you scroll down -->
+    <div class="w-100 py-3 pos-fixed pos-zindex-20 pos-b scroll-state-hidden bg-white bg-shadow" data-scroll="scroll-state" data-scroll-amount="120" data-scroll-setting='{"effectIn":"slideInUp", "effectOut":"slideOutDown", "effectDuration":"0.3", "breakpoint":"992"}'>
+      <div class="container d-flex flex-column flex-lg-row text-center justify-content-center align-items-center">
+        <p class="d-lg-inline-block mr-lg-3 text-dark my-0">Apply for a <strong>different job?</strong></p>
+        <p class="d-lg-inline-block text-sm text-dark op-8 my-0"><a href="career.html" class="mt-2 mt-lg-0 btn btn-primary border-w-2 btn-rounded px-4 py-2 font-weight-bold text-uppercase">Job list</a></p>
+      </div>
+      <a href="#top" class="btn btn-icon btn-dark pos-fixed pos-b pos-r mr-3 mb-3 scroll-state-hidden" title="Back to top" data-scroll="scroll-state"><i class="fa fa-chevron-up"></i></a>
+    </div>
+  <!-- #Content -->
+{% endblock content %}

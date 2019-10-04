@@ -1,0 +1,63 @@
+## This file will setup MySQL & PHPMyAdmin with a single command. Add the code below to a file called "docker-compose.yaml" and run the command
+# 
+# ```
+# $ docker-compose up -d
+# 
+# # To Tear Down
+# $ docker-compose down --volumes
+# ```
+# Reference:
+# Google: docker phpmyadmin -> [Run MySQL & phpMyAdmin locally in 3 steps using Docker](https://medium.com/@migueldoctor/run-mysql-phpmyadmin-locally-in-3-steps-using-docker-74eb735fa1fc)
+# Google: docker compose phpmyadmin -> [Docker Compose FIle For Wordpress, MySQL & phpmyadmin](https://gist.github.com/bradtraversy/faa8de544c62eef3f31de406982f1d42)
+# 
+# Author: Aaron law
+# Last update: 2019-09-25
+##
+version: '3'
+
+services:
+  # Database
+  db:
+    image: mysql:5.7
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+    networks:
+      - wpsite
+  # phpmyadmin
+  phpmyadmin:
+    depends_on:
+      - db
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - '8080:80'
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: password 
+    networks:
+      - wpsite
+  # Wordpress
+  wordpress:
+    depends_on:
+      - db
+    image: wordpress:latest
+    ports:
+      - '8081:80'
+    restart: always
+    volumes: ['./:/var/www/html']
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+    networks:
+      - wpsite
+networks:
+  wpsite:
+volumes:
+  db_data:

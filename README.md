@@ -70,3 +70,75 @@ revenue_engine
 |_ mysite
 ```
 
+
+
+### Database
+
+#### Setup MySQL
+
+Using docker-compose to setup MySQL rapidly.
+
+A docker-compose file is provided in '/utilities/docker'. Use docker-compose to fire it up:
+
+```bash
+sudo docker-composer up
+```
+
+#### Using MySQL as database engine
+
+Refer to [Databases - mysql notes - Django documentation](https://docs.djangoproject.com/en/2.2/ref/databases/#mysql-notes), MySQL has a couple drivers that implement the Python Database API described in [**PEP 249**](https://www.python.org/dev/peps/pep-0249). And Django requires [mysqlclient](https://pypi.org/project/mysqlclient/) 1.3.13 or later.
+
+```bash
+# Ref: [mysqlclient · PyPI](https://pypi.org/project/mysqlclient/)
+sudo apt-get install python-dev default-libmysqlclient-dev
+sudo apt-get install python3-dev # if you are using python
+```
+
+Install PyMySQL:
+
+```bash
+pip install PyMySQL
+```
+
+Add this in `__init__.py` of the project to simulate MySQLdb:
+
+```python
+import pymysql
+pymysql.install_as_MySQLdb()
+```
+
+
+
+**Optional**: A setup on linux:
+
+Google:django using mysql -> [python - Setting Django up to use MySQL - Stack Overflow](https://stackoverflow.com/questions/19189813/setting-django-up-to-use-mysql)
+
+```bash
+sudo apt-get install libmysqlclient-dev
+```
+
+**Optional**:  Error`ModuleNotFoundError: No module named 'MySQLdb'` occurs when `python manage.py runserver`:
+
+Setup PyMySQL as documented above.
+
+**Optional**: If you got an error `django.core.exceptions.ImproperlyConfigured: Error loading MySQLdb module.` when running Django development server (`python manage.py runserver`) with PyMySQL: `django.core.exceptions.ImproperlyConfigured: mysqlclient 1.3.13 or newer is required; you have 0.9.3.`
+
+Try to use `` instead of `` as the database engine in `settings.py`:
+
+```python
+DATABASES = {
+    'default': {
+        'NAME': 'my_db_name',
+        'ENGINE': 'mysql.connector.django',   # 'django.db.backends.mysql' with PyMySQL doesn't work.
+        'USER': '<user>',
+        'PASSWORD': '<pass>',
+        'HOST': 'localhost',
+        'PORT': 3306,
+        'OPTIONS': {
+            'autocommit': True,
+        },
+    }
+}
+```
+
+Reference: Google:django.core.exceptions.ImproperlyConfigured: Error loading MySQLdb module. -> [python - django.core.exceptions.ImproperlyConfigured_ Error loading MySQLdb module_ No module named MySQLdb - Stack Overflow](https://stackoverflow.com/questions/15312732/django-core-exceptions-improperlyconfigured-error-loading-mysqldb-module-no-mo/20091657)

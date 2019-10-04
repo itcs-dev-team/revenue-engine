@@ -8,25 +8,380 @@ One common way of using inheritance is the following three-level approach:
 
 This approach maximizes code reuse and makes it easy to add items to shared content areas, such as section-wide navigation. 
 {% endcomment %}
+
+{% comment %} 
+{% load bootstrap4 %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <link rel="stylesheet" href="{% static 'mysite/base.css' %}" type="text/css">
     <title>{% block title %}Document{% endblock title %}</title>
+</head> {% endcomment %}
+
+{% load bootstrap4 %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>{% block title %}Welcome To ITCS Group - Base{% endblock title %}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- @todo: fill with your company info or remove -->
+  <meta name="description" content="">
+  <meta name="author" content="Themelize.me">
+
+  <!-- Bootstrap v4.3.1 CSS via CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  <!-- Plugins required on all pages NOTE: Additional non-required plugins are loaded ondemand as of AppStrap 2.5 -->
+
+  <!-- Theme style -->
+  <link href="{% static 'mysite/css/theme-style.min.css' %}" rel="stylesheet">
+
+  <!--Your custom colour override-->
+  <link href="#" id="colour-scheme" rel="stylesheet">
+
+  <!-- Your custom override -->
+  <link href="{% static 'mysite/css/custom-style.css' %}" rel="stylesheet">
+
+  <!-- Optional: ICON SETS -->
+  <!-- Iconset: Font Awesome 5.0.13 via CDN -->
+  <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+  <!-- Iconset: flag icons - http://lipis.github.io/flag-icon-css/ -->
+  <link href="{% static 'mysite/plugins/flag-icon-css/css/flag-icon.min.css' %}" rel="stylesheet">
+  <!-- Iconset: ionicons - http://ionicons.com/ -->
+  <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+  <!-- Iconset: Linearicons - https://linearicons.com/free -->
+  <link href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css" rel="stylesheet">
+  <!-- Iconset: Lineawesome - https://icons8.com/articles/line-awesome -->
+  <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css" rel="stylesheet">
+
+  <!-- Le fav and touch icons - @todo: fill with your icons or remove, try https://realfavicongenerator.net -->
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'mysite/favicons/apple-touch-icon.png' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'mysite/favicons/favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'mysite/favicons/favicon-16x16.png' %}">
+  <link rel="manifest" href="{% static 'mysite/favicons/manifest.json' %}">
+  <link rel="shortcut icon" href="{% static 'mysite/favicons/favicon.ico' %}">
+  <meta name="msapplication-config" content="{% static 'mysite/favicons/browserconfig.xml' %}">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Google fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Rambla:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Calligraffitti' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto:100,400,700' rel='stylesheet' type='text/css'>
+
+  <!--Plugin: Retina.js (high def image replacement) - @see: http://retinajs.com/-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/retina.js/1.3.0/retina.min.js"></script>
 </head>
-<body>
-    <p><a href="{% url 'mysite:index' %}">Mysite:Home</a></p>
-    <p><a href="{% url 'mysite:index' %}">Mysite:Home</a></p>
-    {% block nav %}
-    <p><a href="{% url 'mysite:index' %}">Nav:Home</a></p>
-    {% endblock nav%}
 
-    {% block content %}
-    <p>This is content from base, to be override by the child.</p>
-    {% endblock content %}
+<!-- ======== @Region: body ======== -->
 
-    {% include 'mysite/footer.html' %}
+<body class="page page-intro navbar-layout-default">
+
+  <!-- @plugin: page loading indicator, delete to remove loader -->
+  <div class="page-loader" data-toggle="page-loader"></div>
+
+  <a id="#top" href="#content" class="sr-only">Skip to content</a>
+
+  {% block header %}
+    <!-- ======== @Region: #header ======== -->
+  <div id="header">
+
+    <!--Header upper region-->
+    <div class="header-upper">
+      <!-- all direct children of the .header-inner element will be vertically aligned with each other you can override all the behaviours using the flexbox utilities (flexbox.htm) All elements with .header-brand & .header-block-flex wrappers will automatically be aligned inline & vertically using flexbox, this can be overridden using the flexbox utilities (flexbox.htm) Use .header-block to stack elements within on small screen & "float" on larger screens use .order-first or/and .order-last classes to make an element show first or last within .header-inner or .headr-block elements -->
+      <div class="header-inner container">
+        <!--user menu-->
+        <div class="header-block-flex order-1 mr-auto">
+        </div>
+        <!--social media icons-->
+        <div class="nav nav-icons header-block order-12">
+          <!--company contact details-->
+          <nav class="nav nav-sm header-block-flex">
+            <i class="fas fa-phone-square"></i><a class="nav-link text-xs text-uppercase d-none d-md-block" href="#" data-toggle="modal"> (+852)3906-5999</a> &nbsp;
+            <i class="fas fa-envelope"></i><a class="nav-link text-xs d-none d-md-block" href="#" data-toggle="modal">info@itcs-group.com</a>
+          </nav>
+          <div class="header-divider header-divider-sm"></div>
+          <!--language menu-->
+            <a href="index.html"><i class="flag-icon flag-icon-us"></i></a>&nbsp;
+            <a href="index-jp.html"><i class="flag-icon flag-icon-jp"></i></a>
+        </div>
+      </div>
+    </div>
+    <div data-toggle="sticky">
+
+      <!--Header search region - hidden by default -->
+      <div class="header-search collapse" id="search">
+        <form class="search-form container">
+          <input type="text" name="search" class="form-control search" value="" placeholder="Search">
+          <button type="button" class="btn btn-link"><span class="sr-only">Search </span><i class="fa fa-search fa-flip-horizontal search-icon"></i></button>
+          <button type="button" class="btn btn-link close-btn" data-toggle="search-form-close"><span class="sr-only">Close </span><i class="fa fa-times search-icon"></i></button>
+        </form>
+      </div>
+
+      <!--Header & Branding region-->
+      <div class="header">
+        <!-- all direct children of the .header-inner element will be vertically aligned with each other you can override all the behaviours using the flexbox utilities (flexbox.html) All elements with .header-brand & .header-block-flex wrappers will automatically be aligned inline & vertically using flexbox, this can be overridden using the flexbox utilities (flexbox.htm) Use .header-block to stack elements within on small screen & "float" on larger screens use .order-first or/and .order-last classes to make an element show first or last within .header-inner or .headr-block elements -->
+        <div class="header-inner container">
+          <!--branding/logo -->
+          <div class="header-brand">
+            <a class="header-brand-text" href="index.html" title="Home">
+              <h1 class="h2">
+                <img src="{% static 'mysite/img/logo.gif' %}">
+              </h1>
+            </a>
+            <div class="header-divider d-none d-lg-block"></div>
+            <div class="header-slogan d-none d-lg-block">IT Consulting Solutions Ltd.</div>
+          </div>
+          <!-- other header content -->
+          <div class="header-block order-12">
+
+            <!--Search trigger -->
+            <a href="#search" class="btn btn-icon btn-link header-btn float-right order-11" data-toggle="search-form" data-target=".header-search"><i class="fa fa-search fa-flip-horizontal search-icon"></i></a>
+
+            <!-- mobile collapse menu button - data-toggle="collapse" = default BS menu - data-toggle="off-canvas" = Off-cavnas Menu - data-toggle="overlay" = Overlay Menu -->
+            <a href="#top" class="btn btn-link btn-icon header-btn float-right d-lg-none" data-toggle="off-canvas" data-target=".navbar-main" data-settings='{"cloneTarget":true, "targetClassExtras": "navbar-offcanvas"}'> <i class="fa fa-bars"></i> </a>
+          </div>
+
+      {% comment %} {% block icons "We don't use nested template blocks, so move the whole block header to 'index.html' " %}
+          <div class="navbar">
+          <!--Fixed dots menu-->
+          <div class="navbar-main pos-fixed pos-zindex-fixed pos-t-10 pos-lg-vcenter pos-r py-2 px-3 bg-white">
+            <center> <a data-toggle="collapse" href="#navbar-collapse"> <i class="ion-android-menu text-dark icon-2x"></i> </a> </center>
+            <div class="collapse show" id="navbar-collapse">
+              <!--main navigation-->
+              <ul class="nav navbar-nav flex-column align-items-center">
+
+                <li class="nav-item">
+                  <a class="mb-1 btn btn-cyan-dark btn-rounded btn-shadow text-white btn-sm" data-toggle="modal" data-target="#JobSearchModal" role="button" aria-pressed="true">Job<br>Search</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://www.facebook.com/ITCS.Group.Ltd" target="_blank" class="btn-icon btn btn-lg"><i class="fab fa-lg fa-facebook-f text-brand-facebook"></i></a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://www.linkedin.com/company/itcs-group" target="_blank" class="btn-icon btn btn-lg"><i class="fab fa-lg fa-linkedin-in text-brand-linkedin"></i></a>
+                </li>
+            
+              </ul>
+            </div>
+          </div>
+          <!--/.navbar-collapse -->
+        </div>
+        {% endblock icons %} {% endcomment %}
+
+          <div class="navbar navbar-expand-md navbar-static-top">
+            <!--everything within this div is collapsed on mobile-->
+            <div class="navbar-main collapse">
+              <!--main navigation-->
+              <ul class="nav navbar-nav navbar-nav-stretch float-lg-right dropdown-effect-fade">
+
+                <!-- Home -->
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link" data-hover="dropdown"> <i class="fa fa-home nav-link-icon"></i> <span class="d-none">Home</span> </a>
+                </li>
+
+                <!-- Services -->
+                <li class="nav-item dropdown dropdown-mega-menu dropdown-mega-menu-25">
+                  <a href="services.html" class="nav-link dropdown-toggle" id="pages-drop" data-hover="dropdown">Services</a>
+                  <!-- Sub-Menu -->
+                  <div class="dropdown-menu">
+                    <a href="itconsultingandprojectmanagement.html" class="dropdown-item"> IT Consulting and Project Management </a> 
+                    <a href="index.html" class="dropdown-item"> Managed Services (Outsourcing) </a> 
+                    <a href="index.html" class="dropdown-item"> IT Recruitment (Permanent and Contingency Placement) </a> 
+                    <a href="index.html" class="dropdown-item"> IT Support </a>                    
+                    <a href="index.html" class="dropdown-item"> Windows 10 Migration </a> 
+                    <a href="index.html" class="dropdown-item"> Application Development and Off-shoring Advisory </a> 
+                    <a href="index.html" class="dropdown-item"> IT Regulatory Advisory Services </a> 
+                    <a href="index.html" class="dropdown-item"> Secure Data Destruction and Hardware Disposal </a>                    
+                    <a href="index.html" class="dropdown-item"> ITCS Group Unified Communication Solutions </a>
+                  </div>
+                </li>
+
+                <!-- Case Studies -->
+                <li class="nav-item">
+                  <a href="casestudies.html" class="nav-link" data-hover="dropdown"> Case Studies </a>
+                </li>
+
+                <!-- News and Events -->
+                <li class="nav-item">
+                  <a href="newsandevents.html" class="nav-link" data-hover="dropdown"> News and Events </a>
+                </li>
+
+                <!-- Career -->
+                <li class="nav-item">
+                  <a href="career.html" class="nav-link" data-hover="dropdown"> Career </a>
+                </li>
+
+                <!-- About Us -->
+                <li class="nav-item dropdown">
+                  <a href="aboutus.html" class="nav-link dropdown-toggle" id="pages-drop" data-hover="dropdown"> About Us </a>
+                  <!-- Sub-Menu -->
+                  <div class="dropdown-menu">
+                    <a href="companyprofile.html" class="dropdown-item"> Company Profile </a> 
+                    <a href="managementteam.html" class="dropdown-item"> Management Team </a> 
+                    <a href="investorrelations.html" class="dropdown-item"> Investor Relations </a> 
+                    <a href="csr.html" class="dropdown-item"> Corporate Social Responsibility </a>                    
+                  </div>
+                </li>
+
+                <!-- Contact Us -->
+                <li class="nav-item">
+                  <a href="contactus.html" class="nav-link" data-hover="dropdown"> Contact Us</a>
+                </li>
+
+              </ul>
+            </div>
+            <!--/.navbar-collapse -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock header %}
+
+  {% block highlighted %}
+  <!-- ======== @Region: #highlighted ======== -->
+  <div id="highlighted">
+    <!-- Image Banner: Use the the data-bg-img functionality to create a simple image banner Use spacer classes to make the banner larger with padding, allows for easy responsive changes too see: elements-ctas.htm To make the banner full height add the attributes: data-toggle="full-height" data-offset="#header" -->
+    <div class="bg-black overlay overlay-op-8 text-center" data-toggle="backstretch" data-backstretch-target="self" data-backstretch-overlay=false data-backstretch-imgs="{% static 'mysite/img/locations/HongKong.jpg' %},{% static 'mysite/img/locations/Singapore.jpg' %},{% static 'mysite/img/locations/Tokyo.jpg' %},{% static 'mysite/img/locations/Australia.jpg' %},{% static 'mysite/img/locations/India.jpg' %},{% static 'mysite/img/locations/China.jpg' %}">
+      <div data-scroll="scrollax" data-toggle="full-height" class="container px-md-3 py-5 pt-md-6 py-md-5 flex-valign" data-animate="fadeIn" data-animate-delay="0.4">
+        <h2 class="text-grey font-weight-normal mt-lg-3" align="left">
+          Delivered with
+        </h2>
+        <h1 class="display-3 text-white font-weight-bold text-letter-spacing-xs mt-lg-5" align="left">
+          Integrity, Passion and Creativity
+        </h1>
+        <hr class="hr-teal op-4 hr-lg w-40 mx-auto my-4" />
+        <p class="text-white lead my-md-2 w-md-100" align="left">
+          An IT Managed Services, Outsourcing and Talent-Sourcing Company. We specializing in working with Global Banking Corporations, Multinational Fortune 500 Companies and Growing Organizations. 
+        </p>
+      
+        <div class="row text-white lead my-md-4 w-md-100" align="left">
+        <h3 align="left" class="font-weight-bold text-white lead my-md-4 w-md-100">
+          We are "ITCS Group"
+        </h3>
+            <ul class="list-unstyled">
+              <li class="mb-2" data-animate="fadeInUp" data-animate-duration="1.5"><i class="fa fa-check list-item-icon text-primary" aria-hidden="true"></i> To deliver with excellent commitment.</li>
+              <li class="mb-2" data-animate="fadeInUp" data-animate-duration="1.5" data-animate-delay="1.5"><i class="fa fa-check list-item-icon text-primary" aria-hidden="true"></i> To assemble leading professionals.</li>
+              <li class="mb-2" data-animate="fadeInUp" data-animate-duration="1.5" data-animate-delay="3"><i class="fa fa-check list-item-icon text-primary" aria-hidden="true"></i> To provide convenience with all-rounded one stop service for IT talents.</li>
+            </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  {% endblock highlighted %}
+
+{% block content %}
+    <p>The current time: {{ current_time }}</p>
+    This is content from child, that override the content from base.
+{% endblock content %}
+
+
+{% block footer %}
+  <!-- ======== Footer ======== -->
+  <footer id="footer" class="p-0">
+    <div class="container pt-6 pb-5">
+      <div class="row">
+        <div class="col-md-3">
+          <h4 class="text-uppercase text-white">
+            About Us
+          </h4>
+          <p>An IT Managed Services, Outsourcing and Talent-Sourcing Company. We specializing in working with Global Banking Corporations, Multinational Fortune 500 Companies and Growing Organizations.</p>
+        </div>
+
+        <div class="col-md-6">
+          <h4 class="text-uppercase text-white">
+            Our Services
+          </h4>
+          <ul>
+            <li> IT Consulting and Project Management </li> 
+            <li> Managed Services (Outsourcing) </li> 
+            <li> IT Recruitment (Permanent and Contingency Placement) </li> 
+            <li> IT Support </li>                    
+            <li> Windows 10 Migration </li> 
+            <li> Application Development and Off-shoring Advisory </li> 
+            <li> IT Regulatory Advisory Services </li> 
+            <li> Secure Data Destruction and Hardware Disposal </li>                  
+            <li> ITCS Group Unified Communication Solutions </li> 
+          </ul>
+        </div>
+
+        <div class="col-md-3">
+          <h4 class="text-uppercase text-white">
+            Quick Links
+          </h4>
+          <ul>
+            <li> Services </li> 
+            <li> Case Studies </li> 
+            <li> News and Events </li> 
+            <li> Career </li> 
+            <li> About Us </li>                    
+            <li> Contact Us </li> 
+          </ul>
+          <img src="{% static 'mysite/img/ssl.png' %}" class="img-responsive" width="100" height="25">
+          <img src="{% static 'mysite/img/mcafee.png' %}" class="img-responsive" width="80" height="25">
+        </div>
+
+      </div>
+
+    </div>
+    <hr class="my-0 hr-blank op-2" />
+    <!--@todo: replace with company copyright details-->
+    <div class="bg-inverse-dark text-sm py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <p class="mb-0">Copyright 2019 &copy; ITCS Group</p>
+          </div>
+          <div class="col-md-6">
+            <ul class="list-inline footer-links float-md-right mb-0">
+              <li class="list-inline-item"><a href="termsandconditions.html">Terms and Conditions</a></li>
+              <li class="list-inline-item"><a href="privacypolicy.html">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </br></br></br>
+  </footer>
+  <!-- ======== end Footer ======== -->
+  {% endblock footer %}
+{% comment %} {% include 'mysite/footer.html' %} {% endcomment %}
+
+{% block job_search_modal %}{% endblock job_search_modal %}
+{% comment %} {% include 'mysite/job_search_modal.html' %} {% endcomment %}
+
+  <!--Hidden elements - excluded from jPanel Menu on mobile-->
+  <div class="hidden-elements js-off-canvas-exclude"></div>
+
+
+  <!--jQuery 3.3.1 via CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Popper 1.14.6 via CDN, needed for Bootstrap Tooltips & Popovers -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+
+  <!-- Bootstrap v4.3.1 JS via CDN -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+  <!-- JS plugins required on all pages NOTE: Additional non-required plugins are loaded ondemand as of AppStrap 2.5 To disable this and load plugin assets manually simple add data-plugins-manual=true to the body tag -->
+
+  <!--Custom scripts & AppStrap API integration -->
+  <script src="{% static 'mysite/js/custom-script.js' %}"></script>
+  <!--AppStrap scripts mainly used to trigger libraries/plugins -->
+  <script src="{% static 'mysite/js/script.min.js' %}"></script>
 </body>
+
 </html>

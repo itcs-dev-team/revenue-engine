@@ -1,0 +1,49 @@
+{% extends "mysite/base.html" %}
+{% load static %}
+
+{% comment "base structure of template block " %} 
+
+### Base structure of template block: 
+{% extends "mysite/base.html" %}
+{% load static %}
+
+    1. {% block title %}Welcome To ITCS Group - mysite{% endblock title %}
+    2. {% block header %}{% endblock header %}
+        2.1 {% block icons %}{% endblock icons %} # No nested blocks
+    3. {% block highlighted %}{% endblock highlighted %}
+    4. {% block content %}{% endblock content %}
+    5. {% block footer %}{% endblock footer %}
+    6. {% block job_search_modal %}{% endblock job_search_modal %}
+{% endcomment %}
+
+{% comment "Usage of template block " %} 
+
+### Usage:
+
+- Remove comment of a block to activate a template block in this 'base_mysite.html'.
+    Since a template block should provide contents when inheriting from 'base.html'.
+    Zero-content template block here makes **no contents** showing in the resulting render page.
+    (e.g. When I provide an empty "footer" block here and there was no "footer" block provided in 'index.html',
+    the resulting 'index.html' page shows zero-contents footer.)
+
+- No nested template block:
+    There is an extra piece of code (for showing icons of helpdesk in 'index.html' only) that I tag it "block icons".
+    That extra piece of code is placed inside "block header" in 'index.html' originally.
+    However, we don't use nested template block, and therefore we place "block header" in 'base.html' (without "block icons"),
+    and the whole code of "block header" & "block icons" in 'index.html' to avoid using of nested blocks.
+
+{% endcomment %}
+
+{% block title %}Welcome To ITCS Group - mysite{% endblock title %}
+
+{% comment %} {% block header %}
+    {% block icons %}{% endblock icons %}
+{% endblock header %} {% endcomment %}
+
+{% comment %} {% block highlighted %}{% endblock highlighted %} {% endcomment %}
+
+{% comment %} {% block content %}{% endblock content %} {% endcomment %}
+
+{% comment %} {% block footer %}{% endblock footer %} {% endcomment %}
+
+{% comment %} {% block job_search_modal %}{% endblock job_search_modal %} {% endcomment %}
