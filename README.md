@@ -52,7 +52,7 @@ or, update requirements.txt and then install packages from it on other machines 
 
 ```bash
 python -m pip freeze > requirements.txt
-python -m pip -r requirements.txt
+python -m pip install -r requirements.txt
 ```
 
 (Remark: Use `brew` instead of `apt` on Mac. )
