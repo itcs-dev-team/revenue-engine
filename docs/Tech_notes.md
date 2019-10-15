@@ -114,3 +114,6 @@ mysite/static/mysite/base.css
 mysite/templates/mysite/base.html
 ```
 
+Q: What can I do with `django.db.models`?
+
+2019-10-14: *https://docs.djangoproject.com/en/2.2/ref/models/fields/* to see what can we do when define models.
