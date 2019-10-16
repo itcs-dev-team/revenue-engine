@@ -4,12 +4,7 @@ A site for improving revenue in 2019+. ~~(wordpress/wp-content/themes/revenue-en
 
 ### Approach
 
-~~We custom the theme on `technofix`.~~
-
-* ~~[Custom Post Type](https://wordpress.org/support/article/post-types/)~~
-  
-    * ~~[Custom Post Type UI](https://wordpress.org/plugins/custom-post-type-ui/)~~
-    
+We develop the new website with Django in fast pace.
 
 #### About Git branches (2019-10)
 
