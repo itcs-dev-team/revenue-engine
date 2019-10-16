@@ -152,7 +152,46 @@ revenue_engine
 
 ----
 
+### Database (not yet verify)
 
+```mysql
+#-- Work Around MySQL Bugs --
+
+printf '
+import pymysql
+pymysql.install_as_MySQLdb()
+' | tee ./revenue_engine/__init__.py
+```
+
+```mysql
+#-- Setup MySQL Configuration ------
+MY_CNF=/etc/mysql/revengine.cnf
+printf '
+
+[client]
+database = itcs_dev
+host = localhost
+user = django
+password = adminitcs
+default-character-set = utf8
+
+' | sudo tee ${MY_CNF}
+
+```
+
+```python
+#-- Configure Settings.py to point to MySQL CNF ---
+
+DATABASES = {
+  'default': {
+    'ENGINE': 'django.db.backends.mysql',
+    'OPTIONS': {
+      'read_default_file': '/etc/mysql/revengine.cnf',
+    },
+  }
+}
+```
+----
 
 ### Database (old information)
 
@@ -170,7 +209,7 @@ sudo docker-composer up
 
 Refer to [Databases - mysql notes - Django documentation](https://docs.djangoproject.com/en/2.2/ref/databases/#mysql-notes), MySQL has a couple drivers that implement the Python Database API described in [**PEP 249**](https://www.python.org/dev/peps/pep-0249). And Django requires [mysqlclient](https://pypi.org/project/mysqlclient/) 1.3.13 or later.
 
-​```bash
+```bash
 # Ref: [mysqlclient · PyPI](https://pypi.org/project/mysqlclient/)
 sudo apt-get install python-dev default-libmysqlclient-dev
 sudo apt-get install python3-dev # if you are using python
@@ -178,7 +217,7 @@ sudo apt-get install python3-dev # if you are using python
 
 Install PyMySQL:
 
-```bash
+​```bash
 pip install PyMySQL
 ```
 
