@@ -8,6 +8,8 @@ We develop the new website with Django in fast pace.
 
 #### About Git branches (2019-10)
 
+You are free to checkout any branch. All the branches are valid as a branch will be deleted if it was not useful.
+
 1. **'master'**: a stable branch. 
    1. Everything (that stable) should be merged into this branch before online.
 2. **'unstable'**: main branch of unstable code. 
@@ -217,13 +219,13 @@ sudo apt-get install python3-dev # if you are using python
 
 Install PyMySQL:
 
-​```bash
+```bash
 pip install PyMySQL
 ```
 
 Add this in `__init__.py` of the project to simulate MySQLdb:
 
-```python
+​```python
 import pymysql
 pymysql.install_as_MySQLdb()
 ```
