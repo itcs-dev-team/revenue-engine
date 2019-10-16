@@ -24,50 +24,137 @@ We develop the new website with Django in fast pace.
 
 ### Setup (2019-09)
 
-Install python 3.7
+We are going to install packages on Ubuntu. (Remark: Use `brew` instead of `apt` on Mac. )
+
+#### Installation
+
+Install python 3.7 and packages needed:
 
 ```bash
-sudo apt install python3.7
+PKGS=' python3.7 python3-dev git python3-venv python-dev default-libmysqlclient-dev python3-pip'
+
+for i in ${PKGS}
+do
+    sudo apt install $i
+done
 ```
 
-Setup virtual env for Django
+Setup virtual environment for Django:
 
 ```bash
-python3.7 -m venv django-revenue-env
+$ mkdir ~/venv && cd ~/venv
+$ python3.7 -m venv django-revenue-env
+$ source django-revenue-env/bin/activate # test if it works.
+```
+
+Install Django with virtual environment on: (django version>=2.1)
+
+```bash
+(django-revenue-engine) $ pip install django>=2.1
+(django-revenue-engine) $ pip install django-bootstrap4 # Sometimes this package doesn't with requirements.txt
+(django-revenue-engine) $ pip install PyMySQL
+```
+
+( **Do not** update `requirements.txt`:
+
+```bash
+$ pip freeze > requirements.txt
+```
+
+)
+
+Prepare the repo in user global area, and `git clone` the repo.
+
+```bash
+$ sudo mkdir -p /uga/app
+$ sudo chown -R $USER:$USER /uga/app
+
+```
+
+```bash
+$ cd /uga/app
+$ git clone https://github.com/itcs-dev-team/revenue-engine.git
+```
+
+```bash
+$ sudo chown -R $USER:$USER /uga/app/django-revenue-env
+```
+
+
+
+#### Test if it works
+
+Checkout a branch. With virtual environment on, run test server:
+
+```bash
+(django-revenue-engine) $ cd /uga/app/revenue-engine
+(django-revenue-engine) $ git checkout unstable # or git checkout master
+```
+
+```bash
+(django-revenue-engine) $ python manage.py runserver
+```
+
+To exit, deactivate the virtual environment:
+
+```bash
+(django-revenue-engine) $ decative
+$
+```
+
+
+
+#### Use: Running it
+
+For dev, clone & check out latest unstable with virtual env on:
+
+```bash
+cd ~/venv
 source django-revenue-env/bin/activate
 ```
 
-Install Django in virtual env. (django version>=2.1)
+Update python packages with `pip -r requirements.txt` and then install packages that used in the latest code [#](https://pip.pypa.io/en/stable/user_guide/#installing-packages):
 
 ```bash
-python -m pip install django>=2.1
+(django-revenue-engine) $ pip install -r requirements.txt
 ```
 
-or, update requirements.txt and then install packages from it on other machines [#](https://pip.pypa.io/en/stable/user_guide/#installing-packages)
+Fire Django up:
+
+```
+(django-revenue-engine) $ cd /uga/app/revenue-engine
+(django-revenue-engine) $ python manage.py check
+(django-revenue-engine) $ python manage.py migrate
+(django-revenue-engine) $ python manage.py runserver
+```
+
+To test website, fire up a browser:
 
 ```bash
-python -m pip freeze > requirements.txt
-python -m pip install -r requirements.txt
+$ firefox 'localhost:8000/'
 ```
 
-(Remark: Use `brew` instead of `apt` on Mac. )
 
-Run test server
 
-```bash
-python manage.py runserver
-```
+----
 
 ### Organization
 
 ```
 revenue_engine
-|_ mysite
+|- mysite # the backbone module for the whole site.
+|- profiles # User profiles
+|- # Jobs
+|- # News # News and events
+|- # Services
+|- # Case_studies
 ```
 
+----
 
 
-### Database
+
+### Database (old information)
 
 #### Setup MySQL
 
@@ -83,7 +170,7 @@ sudo docker-composer up
 
 Refer to [Databases - mysql notes - Django documentation](https://docs.djangoproject.com/en/2.2/ref/databases/#mysql-notes), MySQL has a couple drivers that implement the Python Database API described in [**PEP 249**](https://www.python.org/dev/peps/pep-0249). And Django requires [mysqlclient](https://pypi.org/project/mysqlclient/) 1.3.13 or later.
 
-```bash
+​```bash
 # Ref: [mysqlclient · PyPI](https://pypi.org/project/mysqlclient/)
 sudo apt-get install python-dev default-libmysqlclient-dev
 sudo apt-get install python3-dev # if you are using python
