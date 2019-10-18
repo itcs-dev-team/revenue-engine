@@ -25,7 +25,7 @@ SECRET_KEY = '#ne9jm6d2smu_cn&5n_2ui*7cgq6c2vqf*#-c*qrjpqix1fpb+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.1.185']
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap4',
+    'services',
     'mysite',
 ]
 
@@ -57,6 +58,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
+        # 'DIRS': ['mysite/templates/', 'services/templates/'], # Or explicit tell the directories of template for each app.
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
