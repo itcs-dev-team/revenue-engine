@@ -23,7 +23,7 @@
           </nav>
           <div class="header-divider header-divider-sm"></div>
           <!--language menu-->
-            <a href="index.html"><i class="flag-icon flag-icon-us"></i></a>&nbsp;
+            <a href="/"><i class="flag-icon flag-icon-us"></i></a>&nbsp;
             <a href="index-jp.html"><i class="flag-icon flag-icon-jp"></i></a>
         </div>
       </div>
@@ -97,12 +97,12 @@
 
                 <!-- Home -->
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link" data-hover="dropdown"> <i class="fa fa-home nav-link-icon"></i> <span class="d-none">Home</span> </a>
+                    <a href="{% url 'mysite:index'%}" class="nav-link" data-hover="dropdown"> <i class="fa fa-home nav-link-icon"></i> <span class="d-none">Home</span> </a>
                 </li>
 
                 <!-- Services -->
                 <li class="nav-item dropdown dropdown-mega-menu dropdown-mega-menu-25">
-                  <a href="services.html" class="nav-link dropdown-toggle" id="pages-drop" data-hover="dropdown">Services</a>
+                  <a href="{% url 'services:index' %}" class="nav-link dropdown-toggle" id="pages-drop" data-hover="dropdown">Services</a>
                   <!-- Sub-Menu -->
                   <div class="dropdown-menu">
                     <a href="itconsultingandprojectmanagement.html" class="dropdown-item"> IT Consulting and Project Management </a> 
@@ -119,34 +119,34 @@
 
                 <!-- Case Studies -->
                 <li class="nav-item">
-                  <a href="casestudies.html" class="nav-link" data-hover="dropdown"> Case Studies </a>
+                  <a href="{% url 'mysite:case_studies' %}" class="nav-link" data-hover="dropdown"> Case Studies </a>
                 </li>
 
                 <!-- News and Events -->
                 <li class="nav-item">
-                  <a href="newsandevents.html" class="nav-link" data-hover="dropdown"> News and Events </a>
+                  <a href="{% url 'mysite:news_and_events' %}" class="nav-link" data-hover="dropdown"> News and Events </a>
                 </li>
 
                 <!-- Career -->
                 <li class="nav-item">
-                  <a href="career.html" class="nav-link" data-hover="dropdown"> Career </a>
+                  <a href="{% url 'mysite:career' %}" class="nav-link" data-hover="dropdown"> Career </a>
                 </li>
 
                 <!-- About Us -->
                 <li class="nav-item dropdown">
-                  <a href="aboutus.html" class="nav-link dropdown-toggle" id="pages-drop" data-hover="dropdown"> About Us </a>
+                  <a href="{% url 'mysite:about' %}" class="nav-link dropdown-toggle" id="pages-drop" data-hover="dropdown"> About Us </a>
                   <!-- Sub-Menu -->
                   <div class="dropdown-menu">
-                    <a href="companyprofile.html" class="dropdown-item"> Company Profile </a> 
-                    <a href="managementteam.html" class="dropdown-item"> Management Team </a> 
-                    <a href="investorrelations.html" class="dropdown-item"> Investor Relations </a> 
-                    <a href="csr.html" class="dropdown-item"> Corporate Social Responsibility </a>                    
+                    <a href="{% url 'mysite:company_profile' %}" class="dropdown-item"> Company Profile </a> 
+                    <a href="{% url 'mysite:management_team' %}" class="dropdown-item"> Management Team </a> 
+                    <a href="{% url 'mysite:investor_relations' %}" class="dropdown-item"> Investor Relations </a> 
+                    <a href="{% url 'mysite:corprate_social_responsibility' %}" class="dropdown_item"> Corporate Social Responsibility </a>                    
                   </div>
                 </li>
 
                 <!-- Contact Us -->
                 <li class="nav-item">
-                  <a href="contactus.html" class="nav-link" data-hover="dropdown"> Contact Us</a>
+                  <a href="{% url 'mysite:contact' %}" class="nav-link" data-hover="dropdown"> Contact Us</a>
                 </li>
 
               </ul>
