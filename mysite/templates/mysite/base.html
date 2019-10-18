@@ -2,8 +2,8 @@
 Google: django template extends -> https://docs.djangoproject.com/en/1.7/topics/templates/
 One common way of using inheritance is the following three-level approach:
 
-* Create a base.html template that holds the main look-and-feel of your site.
-* Create a base_SECTIONNAME.html template for each “section” of your site. For example, base_news.html, base_sports.html. These templates all extend base.html and include section-specific styles/design.
+* Create a base template that holds the main look-and-feel of your site.
+* Create a base_SECTIONNAME template for each “section” of your site. For example, base_news, base_sports. These templates all extend base and include section-specific styles/design.
 * Create individual templates for each type of page, such as a news article or blog entry. These templates extend the appropriate section template.
 
 This approach maximizes code reuse and makes it easy to add items to shared content areas, such as section-wide navigation. 
@@ -114,8 +114,8 @@ This approach maximizes code reuse and makes it easy to add items to shared cont
           </nav>
           <div class="header-divider header-divider-sm"></div>
           <!--language menu-->
-            <a href="index.html"><i class="flag-icon flag-icon-us"></i></a>&nbsp;
-            <a href="index-jp.html"><i class="flag-icon flag-icon-jp"></i></a>
+            <a href="index"><i class="flag-icon flag-icon-us"></i></a>&nbsp;
+            <a href="index-jp"><i class="flag-icon flag-icon-jp"></i></a>
         </div>
       </div>
     </div>
@@ -132,11 +132,11 @@ This approach maximizes code reuse and makes it easy to add items to shared cont
 
       <!--Header & Branding region-->
       <div class="header">
-        <!-- all direct children of the .header-inner element will be vertically aligned with each other you can override all the behaviours using the flexbox utilities (flexbox.html) All elements with .header-brand & .header-block-flex wrappers will automatically be aligned inline & vertically using flexbox, this can be overridden using the flexbox utilities (flexbox.htm) Use .header-block to stack elements within on small screen & "float" on larger screens use .order-first or/and .order-last classes to make an element show first or last within .header-inner or .headr-block elements -->
+        <!-- all direct children of the .header-inner element will be vertically aligned with each other you can override all the behaviours using the flexbox utilities (flexbox) All elements with .header-brand & .header-block-flex wrappers will automatically be aligned inline & vertically using flexbox, this can be overridden using the flexbox utilities (flexbox.htm) Use .header-block to stack elements within on small screen & "float" on larger screens use .order-first or/and .order-last classes to make an element show first or last within .header-inner or .headr-block elements -->
         <div class="header-inner container">
           <!--branding/logo -->
           <div class="header-brand">
-            <a class="header-brand-text" href="index.html" title="Home">
+            <a class="header-brand-text" href="index" title="Home">
               <h1 class="h2">
                 <img src="{% static 'mysite/img/logo.gif' %}">
               </h1>
@@ -154,7 +154,7 @@ This approach maximizes code reuse and makes it easy to add items to shared cont
             <a href="#top" class="btn btn-link btn-icon header-btn float-right d-lg-none" data-toggle="off-canvas" data-target=".navbar-main" data-settings='{"cloneTarget":true, "targetClassExtras": "navbar-offcanvas"}'> <i class="fa fa-bars"></i> </a>
           </div>
 
-      {% comment %} {% block icons "We don't use nested template blocks, so move the whole block header to 'index.html' " %}
+      {% comment %} {% block icons "We don't use nested template blocks, so move the whole block header to 'index' " %}
           <div class="navbar">
           <!--Fixed dots menu-->
           <div class="navbar-main pos-fixed pos-zindex-fixed pos-t-10 pos-lg-vcenter pos-r py-2 px-3 bg-white">
@@ -188,56 +188,56 @@ This approach maximizes code reuse and makes it easy to add items to shared cont
 
                 <!-- Home -->
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link" data-hover="dropdown"> <i class="fa fa-home nav-link-icon"></i> <span class="d-none">Home</span> </a>
+                    <a href="{% url 'mysite:index' %}" class="nav-link" data-hover="dropdown"> <i class="fa fa-home nav-link-icon"></i> <span class="d-none">Home</span> </a>
                 </li>
 
                 <!-- Services -->
                 <li class="nav-item dropdown dropdown-mega-menu dropdown-mega-menu-25">
-                  <a href="services.html" class="nav-link dropdown-toggle" id="pages-drop" data-hover="dropdown">Services</a>
+                  <a href="services" class="nav-link dropdown-toggle" id="pages-drop" data-hover="dropdown">Services</a>
                   <!-- Sub-Menu -->
                   <div class="dropdown-menu">
-                    <a href="itconsultingandprojectmanagement.html" class="dropdown-item"> IT Consulting and Project Management </a> 
-                    <a href="index.html" class="dropdown-item"> Managed Services (Outsourcing) </a> 
-                    <a href="index.html" class="dropdown-item"> IT Recruitment (Permanent and Contingency Placement) </a> 
-                    <a href="index.html" class="dropdown-item"> IT Support </a>                    
-                    <a href="index.html" class="dropdown-item"> Windows 10 Migration </a> 
-                    <a href="index.html" class="dropdown-item"> Application Development and Off-shoring Advisory </a> 
-                    <a href="index.html" class="dropdown-item"> IT Regulatory Advisory Services </a> 
-                    <a href="index.html" class="dropdown-item"> Secure Data Destruction and Hardware Disposal </a>                    
-                    <a href="index.html" class="dropdown-item"> ITCS Group Unified Communication Solutions </a>
+                    <a href="itconsultingandprojectmanagement" class="dropdown-item"> IT Consulting and Project Management </a> 
+                    <a href="index" class="dropdown-item"> Managed Services (Outsourcing) </a> 
+                    <a href="index" class="dropdown-item"> IT Recruitment (Permanent and Contingency Placement) </a> 
+                    <a href="index" class="dropdown-item"> IT Support </a>                    
+                    <a href="index" class="dropdown-item"> Windows 10 Migration </a> 
+                    <a href="index" class="dropdown-item"> Application Development and Off-shoring Advisory </a> 
+                    <a href="index" class="dropdown-item"> IT Regulatory Advisory Services </a> 
+                    <a href="index" class="dropdown-item"> Secure Data Destruction and Hardware Disposal </a>                    
+                    <a href="index" class="dropdown-item"> ITCS Group Unified Communication Solutions </a>
                   </div>
                 </li>
 
                 <!-- Case Studies -->
                 <li class="nav-item">
-                  <a href="casestudies.html" class="nav-link" data-hover="dropdown"> Case Studies </a>
+                  <a href="{% url 'mysite:case_studies' %}" class="nav-link" data-hover="dropdown"> Case Studies </a>
                 </li>
 
                 <!-- News and Events -->
                 <li class="nav-item">
-                  <a href="newsandevents.html" class="nav-link" data-hover="dropdown"> News and Events </a>
+                  <a href="{% url 'mysite:news_and_events' %}" class="nav-link" data-hover="dropdown"> News and Events </a>
                 </li>
 
                 <!-- Career -->
                 <li class="nav-item">
-                  <a href="career.html" class="nav-link" data-hover="dropdown"> Career </a>
+                  <a href="{% url 'mysite:career' %}" class="nav-link" data-hover="dropdown"> Career </a>
                 </li>
 
                 <!-- About Us -->
                 <li class="nav-item dropdown">
-                  <a href="aboutus.html" class="nav-link dropdown-toggle" id="pages-drop" data-hover="dropdown"> About Us </a>
+                  <a href="{% url 'mysite:about'%}" class="nav-link dropdown-toggle" id="pages-drop" data-hover="dropdown"> About Us </a>
                   <!-- Sub-Menu -->
                   <div class="dropdown-menu">
-                    <a href="companyprofile.html" class="dropdown-item"> Company Profile </a> 
-                    <a href="managementteam.html" class="dropdown-item"> Management Team </a> 
-                    <a href="investorrelations.html" class="dropdown-item"> Investor Relations </a> 
-                    <a href="csr.html" class="dropdown-item"> Corporate Social Responsibility </a>                    
+                    <a href="{% url 'mysite:company_profile' %}" class="dropdown-item"> Company Profile </a> 
+                    <a href="{% url 'mysite:management_team' %}" class="dropdown-item"> Management Team </a> 
+                    <a href="{% url 'mysite:investor_relations' %}" class="dropdown-item"> Investor Relations </a> 
+                    <a href="{% url 'mysite:corprate_social_responsibility' %}" class="dropdown-item"> Corporate Social Responsibility </a>                    
                   </div>
                 </li>
 
                 <!-- Contact Us -->
                 <li class="nav-item">
-                  <a href="contactus.html" class="nav-link" data-hover="dropdown"> Contact Us</a>
+                  <a href="{% url 'mysite:contact' %}" class="nav-link" data-hover="dropdown"> Contact Us</a>
                 </li>
 
               </ul>
@@ -347,8 +347,8 @@ This approach maximizes code reuse and makes it easy to add items to shared cont
           </div>
           <div class="col-md-6">
             <ul class="list-inline footer-links float-md-right mb-0">
-              <li class="list-inline-item"><a href="termsandconditions.html">Terms and Conditions</a></li>
-              <li class="list-inline-item"><a href="privacypolicy.html">Privacy Policy</a></li>
+              <li class="list-inline-item"><a href="{% url 'mysite:terms_and_conditions' %}">Terms and Conditions</a></li>
+              <li class="list-inline-item"><a href="{% url 'mysite:privacy' %}">Privacy Policy</a></li>
             </ul>
           </div>
         </div>
@@ -358,10 +358,10 @@ This approach maximizes code reuse and makes it easy to add items to shared cont
   </footer>
   <!-- ======== end Footer ======== -->
   {% endblock footer %}
-{% comment %} {% include 'mysite/footer.html' %} {% endcomment %}
+{% comment %} {% include 'mysite/footer' %} {% endcomment %}
 
 {% block job_search_modal %}{% endblock job_search_modal %}
-{% comment %} {% include 'mysite/job_search_modal.html' %} {% endcomment %}
+{% comment %} {% include 'mysite/job_search_modal' %} {% endcomment %}
 
   <!--Hidden elements - excluded from jPanel Menu on mobile-->
   <div class="hidden-elements js-off-canvas-exclude"></div>
