@@ -195,6 +195,17 @@ DATABASES = {
 ```
 ----
 
+### Database Migration
+
+If running `python manage.py migrate` encounter errors, try to migrate database in sequence:
+
+1. mysite
+2. profiles
+
+----
+
+
+
 ### Database (old information)
 
 #### Setup MySQL
@@ -225,7 +236,7 @@ pip install PyMySQL
 
 Add this in `__init__.py` of the project to simulate MySQLdb:
 
-​```python
+```python
 import pymysql
 pymysql.install_as_MySQLdb()
 ```
@@ -236,7 +247,7 @@ pymysql.install_as_MySQLdb()
 
 Google:django using mysql -> [python - Setting Django up to use MySQL - Stack Overflow](https://stackoverflow.com/questions/19189813/setting-django-up-to-use-mysql)
 
-```bash
+​```bash
 sudo apt-get install libmysqlclient-dev
 ```
 
