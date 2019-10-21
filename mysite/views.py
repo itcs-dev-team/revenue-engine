@@ -15,9 +15,9 @@ def home(request):
     return render(request, 'mysite/home.html')
 
 # level 1 pages
-# def services(request):
-#     """The service page."""
-#     return render(request, 'mysite/services.html')
+def services(request):
+    """The service page."""
+    return render(request, 'mysite/services.html')
 
 def case_studies(request):
     """The Case Studies page."""
