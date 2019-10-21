@@ -12,7 +12,7 @@ You are free to checkout any branch. All the branches are valid as a branch will
 
 1. **'master'**: a stable branch. 
    1. Everything (that stable) should be merged into this branch before online.
-2. **'unstable'**: main branch of unstable code. 
+2. **'unstable'**: dev branch of code that relativately stable. 
    1. Experiment use. For forking new branches from it.
    2. Should be merged into '**master**'.
 3. **'dev-frontend'** & **dev-frontend-xxx'**: everything about development of front-end.
