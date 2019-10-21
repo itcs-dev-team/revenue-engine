@@ -136,8 +136,6 @@ To test website, fire up a browser:
 $ firefox 'localhost:8000/'
 ```
 
-
-
 ----
 
 ### Organization
@@ -186,19 +184,23 @@ Reference: [mysql - Django - installing mysqlclient error  mysqlclient 1.3.13 or
 
 #### MySQL: 4. Change MySQL's configure
 
+Add this in `./revenue_engine/__init__.py` to simulate MySQLdb:
+
 ```mysql
 #-- Work Around MySQL Bugs --
 
-printf '
+# printf '
 import pymysql
 pymysql.install_as_MySQLdb()
-' | tee ./revenue_engine/__init__.py
+# ' | tee ./revenue_engine/__init__.py
 ```
+
+#### MySQL: 5. Change MySQL's configure
+
+Create a new file in `/etc/mysql/revengine.cnf`.
 
 ```mysql
 #-- Setup MySQL Configuration ------
-MY_CNF=/etc/mysql/revengine.cnf
-printf '
 
 [client]
 database = itcs_dev
@@ -207,9 +209,9 @@ user = django
 password = adminitcs
 default-character-set = utf8
 
-' | sudo tee ${MY_CNF}
-
 ```
+
+Change database settings in `Settings.py` as of the following:
 
 ```python
 #-- Configure Settings.py to point to MySQL CNF ---
@@ -223,6 +225,7 @@ DATABASES = {
   }
 }
 ```
+
 ----
 
 ### Database (old information)
