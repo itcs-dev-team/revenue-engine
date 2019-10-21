@@ -12,7 +12,7 @@ You are free to checkout any branch. All the branches are valid as a branch will
 
 1. **'master'**: a stable branch. 
    1. Everything (that stable) should be merged into this branch before online.
-2. **'unstable'**: main branch of unstable code. 
+2. **'unstable'**: dev branch of code that relativately stable. 
    1. Experiment use. For forking new branches from it.
    2. Should be merged into '**master**'.
 3. **'dev-frontend'** & **dev-frontend-xxx'**: everything about development of front-end.
@@ -153,8 +153,38 @@ revenue_engine
 ```
 
 ----
-
 ### Database (not yet verify)
+
+We use MySQL as database engine instead of sqlite.
+
+#### MySQL: 1. Installation of MySQL
+
+Install MySQL server (not docker installation):
+
+```
+$ sudo apt install mysql-server
+```
+
+#### MySQL: 2. Installation depnedancies
+
+Check of you have not yet installed the following:
+
+```
+sudo apt install python3.7
+sudo apt install python3-dev
+sudo apt install python3-venv
+sudo apt install git
+sudo apt install python-dev 
+sudo apt install default-libmysqlclient-dev
+sudo apt install python-pip
+pip install PyMySQL
+```
+
+#### MySQL: 3. Patch Django core
+
+Reference: [mysql - Django - installing mysqlclient error  mysqlclient 1.3.13 or newer is required; you have 0.9.3 - Stack Overflow](https://stackoverflow.com/questions/55657752/django-installing-mysqlclient-error-mysqlclient-1-3-13-or-newer-is-required)
+
+#### MySQL: 4. Change MySQL's configure
 
 ```mysql
 #-- Work Around MySQL Bugs --
