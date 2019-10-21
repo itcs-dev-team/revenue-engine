@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'bootstrap4',
     'services',
     'mysite',
-    'services',
 ]
 
 MIDDLEWARE = [
@@ -59,7 +58,6 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
-        # 'DIRS': ['mysite/templates/', 'services/templates/'], # Or explicit tell the directories of template for each app.
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -78,26 +76,35 @@ WSGI_APPLICATION = 'revenue_engine.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+# DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # },
+    # 'mysql': {
+    #     # NOT for production: this auth info is same as what defined in docker-compose file.
+    #     # 'ENGINE': 'django.db.backends.mysql',
+    #     'ENGINE': 'mysql.connector.django',
+    #     'NAME': 'itcs',
+    #     'USER': 'root',
+    #     'PASSWORD': 'password',
+    #     'HOST': '127.0.0.1', # '127.0.0.1' or empty string means localhost
+    #     'PORT': '3306',
+    #     # 'TEST': {
+    #     #     'NAME': 'itcs-testdb',
+    #     # },
+    # }
+    
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    },
-    'mysql': {
-        # NOT for production: this auth info is same as what defined in docker-compose file.
-        # 'ENGINE': 'django.db.backends.mysql',
-        'ENGINE': 'mysql.connector.django',
-        'NAME': 'itcs',
-        'USER': 'root',
-        'PASSWORD': 'password',
-        'HOST': '127.0.0.1', # '127.0.0.1' or empty string means localhost
-        'PORT': '3306',
-        # 'TEST': {
-        #     'NAME': 'itcs-testdb',
-        # },
+        # For production use.
+        'ENGINE': 'django.db.backends.mysql',
+        'OPTIONS': {
+        'read_default_file': '/etc/mysql/revengine.cnf',
+        },
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
