@@ -8,7 +8,7 @@ urlpatterns = [
     # path('home/', views.home, name='home'), # TODO: remove this path when production
     # level 1 pages
     # path('', views.index, name='index'),
-    # path('', views.services, name='index'),
+    path('', views.services, name='index'),
     # path('case-studies/', views.case_studies, name='case_studies'),
     # path('news-and-events/', views.news_and_events, name='news_and_events'),
     # path('career/', views.career, name='career'),
