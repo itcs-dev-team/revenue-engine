@@ -165,7 +165,7 @@ $ sudo apt install mysql-server
 
 #### MySQL: 2. Installation depnedancies
 
-Check of you have not yet installed the following:
+Check if you have not yet installed the following:
 
 ```
 sudo apt install python3.7
