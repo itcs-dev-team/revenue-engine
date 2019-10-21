@@ -114,7 +114,7 @@ This approach maximizes code reuse and makes it easy to add items to shared cont
           </nav>
           <div class="header-divider header-divider-sm"></div>
           <!--language menu-->
-            <a href="index.html"><i class="flag-icon flag-icon-us"></i></a>&nbsp;
+            <a href="{% url 'mysite:index' %}"><i class="flag-icon flag-icon-us"></i></a>&nbsp;
             <a href="index-jp.html"><i class="flag-icon flag-icon-jp"></i></a>
         </div>
       </div>
@@ -188,7 +188,7 @@ This approach maximizes code reuse and makes it easy to add items to shared cont
 
                 <!-- Home -->
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link" data-hover="dropdown"> <i class="fa fa-home nav-link-icon"></i> <span class="d-none">Home</span> </a>
+                    <a href="{% url 'mysite:index' %}" class="nav-link" data-hover="dropdown"> <i class="fa fa-home nav-link-icon"></i> <span class="d-none">Home</span> </a>
                 </li>
 
                 <!-- Services -->
@@ -210,12 +210,12 @@ This approach maximizes code reuse and makes it easy to add items to shared cont
 
                 <!-- Case Studies -->
                 <li class="nav-item">
-                  <a href="casestudies.html" class="nav-link" data-hover="dropdown"> Case Studies </a>
+                  <a href="{% url 'mysite:case_studies' %}" class="nav-link" data-hover="dropdown"> Case Studies </a>
                 </li>
 
                 <!-- News and Events -->
                 <li class="nav-item">
-                  <a href="newsandevents.html" class="nav-link" data-hover="dropdown"> News and Events </a>
+                  <a href="{% url 'mysite:news_and_events' %}" class="nav-link" data-hover="dropdown"> News and Events </a>
                 </li>
 
                 <!-- Career -->
