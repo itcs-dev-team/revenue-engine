@@ -1,0 +1,46 @@
+
+ DROP TABLE `itcs_dev`.`About`; 
+ DROP TABLE `itcs_dev`.`Career`; 
+ DROP TABLE `itcs_dev`.`CaseStudy`; 
+ DROP TABLE `itcs_dev`.`Location`; 
+ DROP TABLE `itcs_dev`.`MainMenu`; 
+ DROP TABLE `itcs_dev`.`NewsAndEvents`; 
+ DROP TABLE `itcs_dev`.`Post`; 
+ DROP TABLE `itcs_dev`.`Resume`; 
+ DROP TABLE `itcs_dev`.`Role`; 
+ DROP TABLE `itcs_dev`.`Service`; 
+ DROP TABLE `itcs_dev`.`Settings`; 
+ DROP TABLE `itcs_dev`.`SubMenu`; 
+ DROP TABLE `itcs_dev`.`User`; 
+ DROP TABLE `itcs_dev`.`jp_About`; 
+ DROP TABLE `itcs_dev`.`jp_Career`; 
+ DROP TABLE `itcs_dev`.`jp_CaseStudy`; 
+ DROP TABLE `itcs_dev`.`jp_Location`; 
+ DROP TABLE `itcs_dev`.`jp_MainMenu`; 
+ DROP TABLE `itcs_dev`.`jp_NewsAndEvents`; 
+ DROP TABLE `itcs_dev`.`jp_Service`; 
+ DROP TABLE `itcs_dev`.`jp_Settings`; 
+ DROP TABLE `itcs_dev`.`jp_SubMenu`; 
+ DROP TABLE `itcs_dev`.`loginlogoutlogs`; 
+ DROP TABLE `itcs_dev`.`pma__bookmark`; 
+ DROP TABLE `itcs_dev`.`pma__central_columns`; 
+ DROP TABLE `itcs_dev`.`pma__column_info`; 
+ DROP TABLE `itcs_dev`.`pma__designer_settings`; 
+ DROP TABLE `itcs_dev`.`pma__export_templates`; 
+ DROP TABLE `itcs_dev`.`pma__favorite`; 
+ DROP TABLE `itcs_dev`.`pma__history`; 
+ DROP TABLE `itcs_dev`.`pma__navigationhiding`; 
+ DROP TABLE `itcs_dev`.`pma__pdf_pages`; 
+ DROP TABLE `itcs_dev`.`pma__recent`; 
+ DROP TABLE `itcs_dev`.`pma__relation`; 
+ DROP TABLE `itcs_dev`.`pma__savedsearches`; 
+ DROP TABLE `itcs_dev`.`pma__table_coords`; 
+ DROP TABLE `itcs_dev`.`pma__table_info`; 
+ DROP TABLE `itcs_dev`.`pma__table_uiprefs`; 
+ DROP TABLE `itcs_dev`.`pma__tracking`; 
+ DROP TABLE `itcs_dev`.`pma__userconfig`; 
+ DROP TABLE `itcs_dev`.`pma__usergroups`; 
+ DROP TABLE `itcs_dev`.`pma__users`; 
+
+
+show tables;
