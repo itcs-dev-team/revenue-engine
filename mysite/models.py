@@ -1,6 +1,6 @@
 from django.db import models
-from django.contrib.auth.models import User
-from django.conf import settings
+# from django.contrib.auth.models import User
+from django.conf import settings # https://docs.djangoproject.com/en/2.2/topics/settings/
 from django.utils import timezone
 
 User = settings.AUTH_USER_MODEL
