@@ -55,8 +55,8 @@ class Location(models.Model):
     picture = models.ImageField(max_length=100, blank=True)
     ea_licence = models.CharField(max_length=255, null=True)
     labor_dept_url = models.URLField(max_length=200, null=True)
-    created_on = models.DateTimeField(auto_now_add=True)
-    created_by = models.ForeignKey(User, default='1', on_delete=models.SET_DEFAULT)
+    created_at = models.DateTimeField(auto_now_add=True)
+    created_by = models.ForeignKey(User, default='1', on_delete=models.SET_DEFAULT, related_name='users')
     # created_by = models.ForeignKey(settings.AUTH_USER_MODEL, default='1', on_delete=models.SET_DEFAULT)
     status = models.ForeignKey(Status, on_delete=models.SET_DEFAULT, default=2)
     
