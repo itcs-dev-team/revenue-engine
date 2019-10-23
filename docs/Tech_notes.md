@@ -14,7 +14,7 @@ Q: What is the use of that JavaScript file?
   
  Q: A `NoReverseMatch` exception occurs when I moving template files `mysite/news_and_events.html` to `news/news_and_events.html`. I have update urls, views, and template file `mysite/base.html` already. What's wrong?
  
-2019-10-23: In our 3-tier template inheritance setup, `mysite/index.html` is very special among pages: it has it owns 'highlighted' section and 'navigation' section. That is, updating `mysite/base.html` is not enought. We need to update `{% url %}` tags on both `mysite/base.html` and `mysite/index.html` when make change on URL in 'navigation' section.
+2019-10-23: In our 3-tier template inheritance setup, `mysite/index.html` is very special among pages: it has it owns 'highlighted' section and 'navigation' section. That is, updating `mysite/base.html` is not enought. We need to update `{% url %}` tags on both `mysite/base.html` and `mysite/index.html` when make change on URL in 'navigation' section. (Don't forget the  'highlighted' section and 'navigation' section in `mysite/index.html` override it's counterpart in `mysite/base.html`)
 
 ### Back-end
 
