@@ -14,7 +14,9 @@ class CustomUserAdmin(UserAdmin):
     add_form = CustomUserCreationForm
     form = CustomUserChangeForm
     model = CustomUser
-    list_display = ['email', 'username',]
+    
+    list_display = ['email', 'username', 'first_name', 'last_name','created_at', 'last_login']
+    # fields = ['email', 'username','first_name', 'last_name', ('created_at', 'last_login')] # DEBUG: fieldsets in profile's admin.
 
 @admin.register(AccountType) # admin.site.register(JobType)
 class AccountTypeAdmin(admin.ModelAdmin):
