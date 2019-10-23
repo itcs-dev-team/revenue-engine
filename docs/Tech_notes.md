@@ -4,7 +4,7 @@
 
 Q: What is the use of that JavaScript file?
 
-@2019-09-25
+2019-09-25:
 
 * jPanelMenu CSS and JS files inside jPanelMenu folder.
 * flexslider CSS and JS files inside flexslider folder:
@@ -13,9 +13,8 @@ Q: What is the use of that JavaScript file?
   * This is page loading effect used on every HTML files. 
   
  Q: A `NoReverseMatch` exception occurs when I moving template files `mysite/news_and_events.html` to `news/news_and_events.html`. I have update urls, views, and template file `mysite/base.html` already. What's wrong?
-  @2019-10-22
  
- In our 3-tier template inheritance setup, `mysite/index.html` is very special among pages: it has it owns 'highlighted' section and 'navigation' section. That is, updating `mysite/base.html` is not enought. We need to update `{% url %}` tags on both `mysite/base.html` and `mysite/index.html` when make change on URL in 'navigation' section.
+2019-10-23: In our 3-tier template inheritance setup, `mysite/index.html` is very special among pages: it has it owns 'highlighted' section and 'navigation' section. That is, updating `mysite/base.html` is not enought. We need to update `{% url %}` tags on both `mysite/base.html` and `mysite/index.html` when make change on URL in 'navigation' section.
 
 ### Back-end
 
@@ -46,8 +45,6 @@ One common way of using inheritance is the following three-level approach:
 This approach maximizes code reuse and makes it easy to add items to shared content areas, such as section-wide navigation.
 ```
 
-
-
 Q: Pits / Setting of using parent-children templates inheritance: missing namespace (should be defined in `urls.py`)
 
 Google: django 2 'mysite' is not a registered namespace -> https://stackoverflow.com/questions/48161676/django-noreversematch-at-myapp-is-not-a-registered-namespace
@@ -69,7 +66,7 @@ app_name = "mysite"
 
 Q: I have a 3-tier template inheritance ('base.html -> 'base_mysite.html' -> 'index.html'). What if I define zero-contents template block in the 2nd tier (e.g. "footer" block is zero-contents)?
 
-@2019-09-25
+2019-09-25:
 
 ```django
 {% comment "base structure of template block " %} 
@@ -122,3 +119,7 @@ mysite/templates/mysite/base.html
 Q: What can I do with `django.db.models`?
 
 2019-10-14: *https://docs.djangoproject.com/en/2.2/ref/models/fields/* to see what can we do when define models.
+
+Q: There are 4 User auth model in Django. Which User auth model are we using:
+@2019-10-22
+
