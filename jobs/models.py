@@ -19,23 +19,23 @@ User = settings.AUTH_USER_MODEL
 class JobType(models.Model):
     job_type        = models.CharField(max_length=200)
     created_at      = models.DateTimeField(auto_now_add=True)
-    # created_by      = models.ForeignKey(User, default='1', on_delete=models.SET_DEFAULT, related_name='users')
-    created_by      = models.ForeignKey(User, default='1', on_delete=models.SET_DEFAULT)
+    # created_by      = models.ForeignKey(User, on_delete=models.SET_DEFAULT, default=1, related_name='users')
+    created_by      = models.ForeignKey(User, on_delete=models.SET_DEFAULT, default=1)
     status          = models.ForeignKey(Status, on_delete=models.SET_DEFAULT, default=2)
 
 class Category(models.Model):
-    category        = models.CharField(max_length=200)
+    job_category        = models.CharField(max_length=200)
     created_at      = models.DateTimeField(auto_now_add=True)
-    created_by      = models.ForeignKey(User, default='1', on_delete=models.SET_DEFAULT)
+    created_by      = models.ForeignKey(User, on_delete=models.SET_DEFAULT, default=1)
     status          = models.ForeignKey(Status, on_delete=models.SET_DEFAULT, default=2)
 
 class Post(models.Model):
     job_id          = models.CharField(max_length=200)
-    created_by      = models.ForeignKey(User, default='1', on_delete=models.SET_DEFAULT)
+    created_by      = models.ForeignKey(User, on_delete=models.SET_DEFAULT, default=1)
     created_at      = models.DateTimeField(auto_now_add=True)
     # update_at  =
     # update_by  =
-    location        = models.ForeignKey(Location, on_delete=models.SET_NULL, null=True)
+    location        = models.ForeignKey(Location, on_delete=models.SET_DEFAULT, default=1)
     job_type        = models.ForeignKey(JobType, on_delete=models.CASCADE)
     category        = models.ForeignKey(Category, on_delete=models.CASCADE)
     title           = models.CharField(max_length=200)
@@ -49,11 +49,11 @@ class Post(models.Model):
 class ApplicationSource(models.Model):
     source          = models.CharField(max_length=255)
     created_at      = models.DateTimeField(auto_now_add=True)
-    created_by      = models.ForeignKey(User, default='1', on_delete=models.SET_DEFAULT)
+    created_by      = models.ForeignKey(User, on_delete=models.SET_DEFAULT, default=1)
     status          = models.ForeignKey(Status, on_delete=models.SET_DEFAULT, default=2)
 
 class Application(models.Model):
-    source          = models.ForeignKey(ApplicationSource, on_delete=models.SET_NULL, null=True)
-    location        = models.ForeignKey(Location, on_delete=models.SET_NULL, null=True)
+    source          = models.ForeignKey(ApplicationSource, on_delete=models.SET_DEFAULT, default=1)
+    location        = models.ForeignKey(Location, on_delete=models.SET_DEFAULT, default=1)
     created_at      = models.DateTimeField(auto_now_add=True)
     job_id          = models.CharField(max_length=200)

@@ -44,7 +44,7 @@ class Status(models.Model):
     Status = models.IntegerField(choices=STATUS, default=2)
 
 class Location(models.Model):
-    location        = models.CharField(max_length=255, blank=True)
+    the_location    = models.CharField(max_length=255, blank=True)
     company_name    = models.CharField(max_length=255, blank=True)
     jp_company_name = models.CharField(max_length=255, blank=True)
     address         = models.CharField(max_length=255, blank=True)
@@ -56,7 +56,7 @@ class Location(models.Model):
     ea_licence      = models.CharField(max_length=255, null=True, blank=True)
     labor_dept_url  = models.URLField(max_length=200, null=True, blank=True)
     created_at      = models.DateTimeField(auto_now_add=True)
-    created_by      = models.ForeignKey(User, default='1', on_delete=models.SET_DEFAULT, related_name='users')
+    created_by      = models.ForeignKey(User, on_delete=models.SET_DEFAULT, default=1, related_name='users')
     # created_by = models.ForeignKey(settings.AUTH_USER_MODEL, default='1', on_delete=models.SET_DEFAULT)
     status          = models.ForeignKey(Status, on_delete=models.SET_DEFAULT, default=2)
     
