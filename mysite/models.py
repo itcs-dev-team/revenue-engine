@@ -44,7 +44,7 @@ class Status(models.Model):
     Status = models.IntegerField(choices=STATUS, default=2)
 
 class Location(models.Model):
-    the_location    = models.CharField(max_length=255, blank=True)
+    location    = models.CharField(max_length=255, blank=True)
     company_name    = models.CharField(max_length=255, blank=True)
     jp_company_name = models.CharField(max_length=255, blank=True)
     address         = models.CharField(max_length=255, blank=True)
