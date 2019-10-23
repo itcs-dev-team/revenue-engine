@@ -11,6 +11,10 @@ Q: What is the use of that JavaScript file?
   *  This is being use for the photo and jobs slider in job portal page.
 * fakeLoader CSS and JS files inside fakeLoader folder:
   * This is page loading effect used on every HTML files. 
+  
+ Q: A `NoReverseMatch` exception occurs when I moving template files `mysite/news_and_events.html` to `news/news_and_events.html`. I have update urls, views, and template file `mysite/base.html` already. What's wrong?
+ 
+ `mysite/index.html` is very special among pages: it has it owns 'highlighted' section and 'navigation' section. That is, updating `mysite/base.html` is not enought. We need to update `{% url %}` tags on both `mysite/base.html` and `mysite/index.html` when make change on URL in 'navigation' section.
 
 ### Back-end
 
