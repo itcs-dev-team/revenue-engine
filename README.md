@@ -144,10 +144,10 @@ $ firefox 'localhost:8000/'
 revenue_engine
 |- mysite # the backbone module for the whole site.
 |- profiles # User profiles
-|- # Jobs
-|- # News # News and events
-|- # Services
-|- # Case_studies
+|- # jobs
+|- # news # News and events
+|- # services
+|- # case_studies
 ```
 
 ----
