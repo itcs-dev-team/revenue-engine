@@ -15,8 +15,18 @@ class CustomUserAdmin(UserAdmin):
     form = CustomUserChangeForm
     model = CustomUser
     
-    list_display = ['email', 'username', 'first_name', 'last_name','created_at', 'last_login']
-    # fields = ['email', 'username','first_name', 'last_name', ('created_at', 'last_login')] # DEBUG: fieldsets in profile's admin.
+    # Reference: https://docs.djangoproject.com/zh-hans/2.2/ref/contrib/admin/
+    list_display = ['email', 'username', 'first_name', 'last_name', 'phone','created_at', 'last_login', 'is_staff', 'is_superuser']
+    # fields = ('email', 'username','first_name', 'last_name', ('created_at', 'last_login')) # DEBUG: fieldsets in profile's admin.
+    fieldsets = (
+        (None, {
+            "fields": ('email', 'username', 'phone')
+        }),
+        ('Advanced options', {
+            'classes': ('collapse',),
+            'fields': ('is_staff', 'is_superuser'),
+        }),
+)
 
 @admin.register(AccountType) # admin.site.register(JobType)
 class AccountTypeAdmin(admin.ModelAdmin):
