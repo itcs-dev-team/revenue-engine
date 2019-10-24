@@ -27,3 +27,6 @@ class CaseStudy(models.Model):
     updated_at      = models.DateTimeField(auto_now=True)
     updated_by      = models.ForeignKey(User, on_delete=models.SET_DEFAULT, default=1)
     status          = models.ForeignKey(Status, on_delete=models.SET_DEFAULT, default=2)
+    
+    def __str__(self):
+        return self.title
