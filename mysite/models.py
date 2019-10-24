@@ -41,10 +41,11 @@ class Status(models.Model):
         ('2', 'inactive'),
         ('3', 'deleted'),
     ]
-    Status = models.IntegerField(choices=STATUS, default=2)
+    # Status = models.IntegerField(choices=STATUS, default=2) # DEBUG: False design.
+    Status          = models.CharField(max_length=11, choices=STATUS, default=2) # 2019-10-24: correct design.
 
 class Location(models.Model):
-    location    = models.CharField(max_length=255, blank=True)
+    location        = models.CharField(max_length=255, blank=True)
     company_name    = models.CharField(max_length=255, blank=True)
     jp_company_name = models.CharField(max_length=255, blank=True)
     address         = models.CharField(max_length=255, blank=True)
