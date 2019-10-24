@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'profiles',
     'news',
     'jobs',
+    'case_studies'
 ]
 
 AUTH_USER_MODEL = 'profiles.CustomUser' # 2019-10-22: https://wsvincent.com/django-custom-user-model-tutorial/
