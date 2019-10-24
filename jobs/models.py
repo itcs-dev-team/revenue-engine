@@ -27,7 +27,7 @@ class JobType(models.Model):
         return self.job_type
 
 class Category(models.Model):
-    job_category        = models.CharField(max_length=200)
+    job_category    = models.CharField(max_length=200)
     created_at      = models.DateTimeField(auto_now_add=True)
     created_by      = models.ForeignKey(User, on_delete=models.SET_DEFAULT, default=1)
     status          = models.ForeignKey(Status, on_delete=models.SET_DEFAULT, default=2)
@@ -45,7 +45,7 @@ class Post(models.Model):
     job_type        = models.ForeignKey(JobType, on_delete=models.CASCADE)
     category        = models.ForeignKey(Category, on_delete=models.CASCADE)
     title           = models.CharField(max_length=200)
-    description     = models.CharField(max_length=255)
+    description     = models.TextField(max_length=1000)
     job_id          = models.CharField(max_length=200)
     # responsibilities =    # TODO: unknown relationship since no model Services
     # equirements =         # TODO: relationship since no model Services
