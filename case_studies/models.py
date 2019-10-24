@@ -19,11 +19,11 @@ User = settings.AUTH_USER_MODEL
 class CaseStudy(models.Model):
     title           = models.CharField(max_length=255)
     client_overview = models.CharField(max_length=255)
-    details         = models.CharField(max_length=255)
+    details         = models.TextField(max_length=255)
     picture         = models.ImageField(max_length=100, blank=True)
     created_at      = models.DateTimeField(auto_now_add=True)
     # created_by      = models.ForeignKey(User, on_delete=models.SET_DEFAULT, default=1)
     created_by      = models.ForeignKey(User, on_delete=models.SET_DEFAULT, default=1, related_name='case_study_users')
-    updated_at      = models.DateTimeField(auto_now_add=True)
+    updated_at      = models.DateTimeField(auto_now=True)
     updated_by      = models.ForeignKey(User, on_delete=models.SET_DEFAULT, default=1)
     status          = models.ForeignKey(Status, on_delete=models.SET_DEFAULT, default=2)
