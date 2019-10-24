@@ -14,9 +14,70 @@ Q: What is the use of that JavaScript file?
   
  Q: A `NoReverseMatch` exception occurs when I moving template files `mysite/news_and_events.html` to `news/news_and_events.html`. I have update urls, views, and template file `mysite/base.html` already. What's wrong?
  
-2019-10-23: In our 3-tier template inheritance setup, `mysite/index.html` is very special among pages: it has it owns 'highlighted' section and 'navigation' section. That is, updating `mysite/base.html` is not enought. We need to update `{% url %}` tags on both `mysite/base.html` and `mysite/index.html` when make change on URL in 'navigation' section. (Don't forget the  'highlighted' section and 'navigation' section in `mysite/index.html` override it's counterpart in `mysite/base.html`)
+2019-10-23: You need to update both `mysite/base.html` and `mysite/index.html`. In our 3-tier template inheritance setup, `mysite/index.html` is very special among pages: it has it owns 'highlighted' section and 'navigation' section and they override the base. That is, updating `mysite/base.html` is not enought. We need to update `{% url %}` tags on both `mysite/base.html` and `mysite/index.html` when make change on URL in 'navigation' section. (Don't forget the  'highlighted' section and 'navigation' section in `mysite/index.html` override it's counterpart in `mysite/base.html`)
 
 ### Back-end
+
+#### Database Migration
+
+Q: Why use `python manage.py` to build tables?
+
+2019-10-24: Database migration as database schema version control.
+
+> Migrations are Django’s way of propagating changes you make to your models (adding a field, deleting a model, etc.) into your database schema. They’re designed to be mostly automatic, but you’ll need to know when to make migrations, when to run them, and the common problems you might run into.
+
+Before running actual `migrate` command to make changes on database, you should know what's going on with migration:
+
+1. `python manage.py migrate --plan` or `python manage.py migrate mysite 0002 --plan` to see what's going to migrate.
+2. `python manage.py sqlmigrate` to see the actual SQL statements that is going to be executed.
+3. `python manage.py showmigrations` to see which migration files have make changes on the database and which have not.
+
+An example run of `python manage.py showmigrations`:
+
+```bash
+(django-revenue-env) aaron@aaron-300V3A:~/Python/revenue-engine$ python manage.py showmigrations
+admin
+ [X] 0001_initial
+ [X] 0002_logentry_remove_auto_add
+ [X] 0003_logentry_add_action_flag_choices
+auth
+ [X] 0001_initial
+ [X] 0002_alter_permission_name_max_length
+ [X] 0003_alter_user_email_max_length
+ [X] 0004_alter_user_username_opts
+ [X] 0005_alter_user_last_login_null
+ [X] 0006_require_contenttypes_0002
+ [X] 0007_alter_validators_add_error_messages
+ [X] 0008_alter_user_username_max_length
+ [X] 0009_alter_user_last_name_max_length
+ [X] 0010_alter_group_name_max_length
+ [X] 0011_update_proxy_permissions
+contenttypes
+ [X] 0001_initial
+ [X] 0002_remove_content_type_name
+jobs
+ [X] 0001_initial
+ [X] 0002_auto_20191023_1708
+ [X] 0003_auto_20191023_1922
+ [X] 0004_auto_20191023_1927
+mysite
+ [X] 0001_initial
+ [X] 0002_auto_20191024_0154
+ [X] 0003_auto_20191024_1138
+news
+ (no migrations)
+profiles
+ [X] 0001_initial
+services
+ (no migrations)
+sessions
+ [X] 0001_initial
+```
+Besides, when `django.db.utils.InternalError: (1060, "Duplicate column name 'created_by_id'")`  exception occurs (a.k.a. running `makemigrations` success but `migrate` fails), you could try to skip a centain migration file with `--fake` option:
+
+`python manage.py migrate mysite 0002 --fake`
+
+Reference: Django:migrate -> [Migrations | Django documentation | Django](https://docs.djangoproject.com/en/2.2/topics/migrations/)
 
 #### Using Django Template Language
 
