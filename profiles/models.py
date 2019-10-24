@@ -18,6 +18,9 @@ class AccountType(models.Model):
     # status = models.CharField(max_length=2, choices=STATUS, default='01')
     status = models.ForeignKey(Status, on_delete=models.SET_DEFAULT, default=2)
     
+    def __str__(self):
+        return self.account_type
+    
 class CustomUser(AbstractUser):
     # user_id = models.IntegerField(primary_key=True)
     # password # defined in `django.contrib.auth.models.User` already

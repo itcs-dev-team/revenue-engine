@@ -23,12 +23,18 @@ class JobType(models.Model):
     created_by      = models.ForeignKey(User, on_delete=models.SET_DEFAULT, default=1)
     status          = models.ForeignKey(Status, on_delete=models.SET_DEFAULT, default=2)
 
+    def __str__(self):
+        return self.job_type
+
 class Category(models.Model):
     job_category        = models.CharField(max_length=200)
     created_at      = models.DateTimeField(auto_now_add=True)
     created_by      = models.ForeignKey(User, on_delete=models.SET_DEFAULT, default=1)
     status          = models.ForeignKey(Status, on_delete=models.SET_DEFAULT, default=2)
 
+    def __str__(self):
+        return self.job_category
+    
 class Post(models.Model):
     job_id          = models.CharField(max_length=200)
     created_by      = models.ForeignKey(User, on_delete=models.SET_DEFAULT, default=1)
@@ -46,14 +52,23 @@ class Post(models.Model):
     featured_job    = models.CharField(max_length=200)
     status          = models.ForeignKey(Status, on_delete=models.SET_DEFAULT, default=2)
 
+    def __str__(self):
+        return self.title
+    
 class ApplicationSource(models.Model):
     source          = models.CharField(max_length=255)
     created_at      = models.DateTimeField(auto_now_add=True)
     created_by      = models.ForeignKey(User, on_delete=models.SET_DEFAULT, default=1)
     status          = models.ForeignKey(Status, on_delete=models.SET_DEFAULT, default=2)
 
+    def __str__(self):
+        return self.source
+    
 class Application(models.Model):
     source          = models.ForeignKey(ApplicationSource, on_delete=models.SET_DEFAULT, default=1)
     location        = models.ForeignKey(Location, on_delete=models.SET_DEFAULT, default=1)
     created_at      = models.DateTimeField(auto_now_add=True)
     job_id          = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.id
