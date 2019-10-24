@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from django.views import View
 
 from datetime import datetime
 # Create your views here.
@@ -10,9 +10,16 @@ def index(request):
     # return render(request, 'mysite/index.html', current_time)
     return render(request, 'mysite/index.html')
 
-def home(request):
-    """A simple home page, with django-bootstrap4, for debug of static files."""
-    return render(request, 'mysite/home.html')
+# def home(request):
+#     """A simple home page, with django-bootstrap4, for debug of static files."""
+#     return render(request, 'mysite/home.html')
+
+class HomeView(View): # https://docs.djangoproject.com/en/2.2/topics/class-based-views/intro/
+    def get(self, request, *args, **kwargs):
+        template_name = 'mysite/home.html'
+        
+        return render(request, self.template_name)
+
 
 # level 1 pages
 def services(request):
