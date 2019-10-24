@@ -36,13 +36,16 @@ User = settings.AUTH_USER_MODEL
 #         return self.headline
 
 class Status(models.Model):
-    STATUS = [
-        ('1', 'active'),
-        ('2', 'inactive'),
-        ('3', 'deleted'),
-    ]
+    # STATUS = [
+    #     ('1', 'active'),
+    #     ('2', 'inactive'),
+    #     ('3', 'deleted'),
+    # ]
     # Status = models.IntegerField(choices=STATUS, default=2) # DEBUG: False design.
-    Status          = models.CharField(max_length=11, choices=STATUS, default=2) # 2019-10-24: correct design.
+    status          = models.CharField(max_length=11, default=2) # 2019-10-24: correct design.
+    
+    def __str__(self):
+        return self.status
 
 class Location(models.Model):
     location        = models.CharField(max_length=255, blank=True)
