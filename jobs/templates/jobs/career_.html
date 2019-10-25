@@ -7,15 +7,28 @@
 
   <!-- ======== @Region: #content ======== -->
 <p>{{ all_jobs }}</p>
-<p>
+{% comment %} 1. Showing all jobs.{% endcomment %}
+<p>All jobs</p>
 <ul>
 {% for job in all_jobs %}
   <li>
-  {{ job }}
+  {{ job.title }}
+  {{ job.is_featured_job }}
   </li>
 {% endfor %}
 </ul>
-</p>
+
+{% comment %} 2. Filter jobs. {% endcomment %}
+<p>All jobs - with filter "is_featured_job"</p>
+<ul>
+{% for job in all_jobs %}
+  {% if job.is_featured_job %}
+    <li>{{ job.title }} - **Featured job** </li>
+  {% else %}
+    <li>{{ job.title }} - Not a featured job</li>
+  {% endif %}
+{% endfor %}
+</ul>
 
   <!-- #Content -->
 {% endblock content %}
