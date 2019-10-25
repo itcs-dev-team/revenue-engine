@@ -13,14 +13,14 @@ urlpatterns = [
     # path('services/', views.services, name='service'),
     path('case-studies/', views.case_studies, name='case_studies'),
     # path('news-and-events/', views.news_and_events, name='news_and_events'),
-    path('career/', views.career, name='career'),
+    # path('career/', views.career, name='career'),
     path('about/', views.about, name='about'),
     path('contact/', views.contact, name='contact'),
     path('privacy/', views.privacy, name='privacy'),
     path('terms-and-conditions/', views.terms_and_conditions, name='terms_and_conditions'),
     
     # level 2 pages
-    path('career/apply-now/', views.apply_now, name='apply_now'),
+    # path('career/apply-now/', views.apply_now, name='apply_now'),
     path('about/company-profile/', views.company_profile, name='company_profile'),
     path('about/management-team/', views.management_team, name='management_team'),
     path('about/investor-relations/', views.investor_relations, name='investor_relations'),
