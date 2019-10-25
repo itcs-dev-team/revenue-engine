@@ -1,0 +1,21 @@
+{% extends "mysite/base_mysite.html" %}
+{% load static %}
+
+{% block title %}Welcome To ITCS Group - Career{% endblock title %}
+
+{% block content %}
+
+  <!-- ======== @Region: #content ======== -->
+<p>{{ all_jobs }}</p>
+<p>
+<ul>
+{% for job in all_jobs %}
+  <li>
+  {{ job }}
+  </li>
+{% endfor %}
+</ul>
+</p>
+
+  <!-- #Content -->
+{% endblock content %}
