@@ -49,7 +49,8 @@ class Post(models.Model):
     job_id          = models.CharField(max_length=200)
     # responsibilities =    # TODO: unknown relationship since no model Services
     # equirements =         # TODO: relationship since no model Services
-    featured_job    = models.CharField(max_length=200)
+    # featured_job    = models.CharField(max_length=200)
+    is_featured_job    = models.BooleanField(default=False)
     status          = models.ForeignKey(Status, on_delete=models.SET_DEFAULT, default=2)
 
     def __str__(self):
