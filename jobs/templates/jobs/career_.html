@@ -30,5 +30,17 @@
 {% endfor %}
 </ul>
 
+
+{% comment %} 3. Filter jobs with links to job detail. {% endcomment %}
+<p>All jobs - with filter "is_featured_job"</p>
+<ul>
+{% for post in posts %}
+  {% if post %}
+    <li><a href="{% url 'jobs:job_detail' post.pk %}">{{ post.title }}</a> - **Featured job** </li>
+  {% else %}
+    <li><a href="{% url 'jobs:job_detail' post.pk %}">{{ post.title }}</a> - Not a featured job</li>
+  {% endif %}
+{% endfor %}
+</ul>
   <!-- #Content -->
 {% endblock content %}
