@@ -13,7 +13,7 @@ urlpatterns = [
     # path('case-studies/', views.case_studies, name='case_studies'),
     # path('news-and-events/', views.news_and_events, name='news_and_events'),
     # path('', views.career, name='career'), # path('career/', views.career, name='career'), # Replaced by CBV.
-    path('', CareerListView.as_view(), name='career'),
+    path('', JobListView.as_view(), name='career'),
     # path('about/', views.about, name='about'),
     # path('contact/', views.contact, name='contact'),
     # path('privacy/', views.privacy, name='privacy'),
