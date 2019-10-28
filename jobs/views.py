@@ -14,7 +14,7 @@ def apply_now(request):
     return render(request, 'jobs/apply_now.html')
 
 ## CBV
-class CareerListView(ListView): # TODO: Rename to JobListView.
+class JobListView(ListView): # TODO: Rename to JobListView.
     """Show a list of jobs.
     
     The Career home page.
