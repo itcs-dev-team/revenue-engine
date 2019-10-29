@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from .views import JobListView, JobDetailView
+from .views import JobListView, JobDetailView, JobApplyView
 
 app_name = "services"
 
@@ -21,7 +21,7 @@ urlpatterns = [
     
     # level 2 pages
     path('job/<int:pk>/', JobDetailView.as_view(), name='job_detail'),
-    path('apply-now/', views.apply_now, name='apply_now'), # path('career/apply-now/', views.apply_now, name='apply_now'),
+    path('job/<int:pk>/apply/', JobApplyView.as_view(), name='job_apply'), # path('career/apply-now/', views.apply_now, name='apply_now'),
     # path('about/company-profile/', views.company_profile, name='company_profile'),
     # path('about/management-team/', views.management_team, name='management_team'),
     # path('about/investor-relations/', views.investor_relations, name='investor_relations'),
