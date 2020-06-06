@@ -1,0 +1,46 @@
+{% extends "mysite/base_mysite.html" %}
+{% load static %}
+
+{% block title %}Welcome To ITCS Group - Career{% endblock title %}
+
+{% block content %}
+
+  <!-- ======== @Region: #content ======== -->
+<p>{{ posts }}</p>
+{% comment %} 1. Showing all jobs.{% endcomment %}
+<p>All jobs</p>
+<ul>
+{% for post in posts %}
+  <li>
+  {{ post.title }}
+  {{ post.is_featured_job }}
+  </li>
+{% endfor %}
+</ul>
+
+{% comment %} 2. Filter jobs. {% endcomment %}
+<p>All jobs - with filter "is_featured_job"</p>
+<ul>
+{% for post in posts %}
+  {% if post %}
+    <li>{{ post.title }} - **Featured job** </li>
+  {% else %}
+    <li>{{ post.title }} - Not a featured job</li>
+  {% endif %}
+{% endfor %}
+</ul>
+
+
+{% comment %} 3. Filter jobs with links to job detail. {% endcomment %}
+<p>All jobs - with filter "is_featured_job"</p>
+<ul>
+{% for post in posts %}
+  {% if post %}
+    <li><a href="{% url 'jobs:job_detail' post.pk %}">{{ post.title }}</a> - **Featured job** </li>
+  {% else %}
+    <li><a href="{% url 'jobs:job_detail' post.pk %}">{{ post.title }}</a> - Not a featured job</li>
+  {% endif %}
+{% endfor %}
+</ul>
+  <!-- #Content -->
+{% endblock content %}

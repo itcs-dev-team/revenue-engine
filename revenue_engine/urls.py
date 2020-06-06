@@ -21,4 +21,5 @@ urlpatterns = [
     path('', include('mysite.urls', namespace='mysite')), # General site
     path('services/', include('services.urls', namespace='services')), # Services pages
     path('news/', include('news.urls', namespace='news')), # News pages
+    path('career/', include('jobs.urls', namespace='jobs')), # News pages
 ]

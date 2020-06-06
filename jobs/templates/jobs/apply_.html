@@ -1,0 +1,15 @@
+{% extends "mysite/base_mysite.html" %}
+{% load static %}
+
+{% block title %}Welcome To ITCS Group - Apply for a job{% endblock title %}
+
+{% block content %}
+  <!-- ======== Content ======== -->
+<!-- templates/post_new.html -->
+    <h1>Apply Job</h1>
+    <form action="" method="post">{% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="Apply Job!" />
+    </form>
+  <!-- #Content -->
+{% endblock content %}
